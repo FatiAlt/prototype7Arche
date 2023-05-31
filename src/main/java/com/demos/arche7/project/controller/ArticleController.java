@@ -28,5 +28,9 @@ public class ArticleController {
 
         return articleService.saveArticle(article);
     }
+    @DeleteMapping("/article/{id}")
+    public Article article (@PathVariable Long id) {
+        return article(id);
+    }
 
 }

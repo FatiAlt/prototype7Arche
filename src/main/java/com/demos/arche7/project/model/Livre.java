@@ -8,6 +8,9 @@ import jakarta.persistence.Table;
 @Table(name = "livre")
 @PrimaryKeyJoinColumn(name="id")
 public class Livre extends Article {
+
+    private String titre;
+    private String auteur;
     public String getTitre() {
         return titre;
     }
@@ -23,10 +26,6 @@ public class Livre extends Article {
     public void setAuteur(String auteur) {
         this.auteur = auteur;
     }
-
-    private String titre;
-    private String auteur;
-
 }
 
 

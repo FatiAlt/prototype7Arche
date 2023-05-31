@@ -15,18 +15,21 @@ public class Article {
     private String designation;
     private float prixHt;
     private double tva = 0.2;
-    private String image;
+    private String type;
     private String format;
 
+    private String resume;
 
-    public Article(Long id, String ref, String designation, float prixHt, double tva, String image, String format) {
+
+    public Article(Long id, String ref, String designation, float prixHt, double tva, String type, String format, String resume) {
         this.id = id;
         this.ref = ref;
         this.designation = designation;
         this.prixHt = prixHt;
         this.tva = tva;
-        this.image = image;
+        this.type = type;
         this.format = format;
+        this.resume = resume;
     }
 
     public Article() {
@@ -69,12 +72,12 @@ public class Article {
         this.tva = tva;
     }
 
-    public String getImage() {
-        return image;
+    public String getType() {
+        return type;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setType(String image) {
+        this.type = image;
     }
 
     public String getFormat() {
@@ -85,6 +88,10 @@ public class Article {
         this.format = format;
     }
 
+    public String getResume() { return resume; }
+
+    public void setResume(String resume) { this.resume = resume; }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -93,8 +100,11 @@ public class Article {
                 ", designation='" + designation + '\'' +
                 ", prixHt=" + prixHt +
                 ", tva=" + tva +
-                ", image='" + image + '\'' +
+                ", image='" + type + '\'' +
                 ", format='" + format + '\'' +
+                "resume='" + resume + '\'' +
                 '}';
     }
+
+
 }
