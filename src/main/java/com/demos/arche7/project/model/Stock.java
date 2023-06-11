@@ -6,20 +6,32 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 
 public class Stock {
+    private int quantiteTotal;
 
-  private int nombre;
+    public Stock() {
 
-    public int getNombre() {
-        return nombre;
+    }
+    public Stock(int quantiteTotal) {
+        this.quantiteTotal = quantiteTotal;
     }
 
-    public void incremente(int ajout) {
-        nombre += ajout;
+    public int getQuantiteTotal() {
+        return quantiteTotal;
     }
 
-    public void decremente(int ajout) throws StockException {
-        if (ajout <= nombre) {
-            nombre -= ajout;
+    public void setQuantiteTotal(int quantiteTotal) {
+        this.quantiteTotal = quantiteTotal;
+    }
+
+
+
+    public void incremente(int entree) {
+        quantiteTotal += entree;
+    }
+
+    public void decremente(int sortie) throws StockException {
+        if (sortie <= quantiteTotal) {
+            quantiteTotal -= sortie;
         } else {
             throw new StockException("stock insuffisant");
         }

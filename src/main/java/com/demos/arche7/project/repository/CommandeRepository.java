@@ -1,4 +1,9 @@
 package com.demos.arche7.project.repository;
 
-public interface CommandeRepository {
+import com.demos.arche7.project.model.Commande;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CommandeRepository extends CrudRepository<Commande,Long> {
+    Commande findCommandeById(Long Id);
+
 }
