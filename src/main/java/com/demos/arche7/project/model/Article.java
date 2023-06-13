@@ -1,7 +1,10 @@
 package com.demos.arche7.project.model;
 import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Entity
+@Table(name = "articles")
+@CrossOrigin
 
 public class Article {
 
@@ -9,7 +12,6 @@ public class Article {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-
         private String ref;
         private String designation;
         private double prixHt;

@@ -4,21 +4,27 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="ligne_panier")
-public class Lignepanier {
+public class LignePanier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
-    private Long id;
+    protected Long id;
+    @ManyToOne
+    @JoinColumn(name="article_id")
+    private Article article;
 
     private int qteVoulue;
+    @ManyToOne
+    @JoinColumn(name="panier_id")
+    private Panier panier;
 
-    public Lignepanier(Long id, int qteVoulue) {
-        this.id = id;
+    public LignePanier(Article article, int qteVoulue) {
+        this.article = article;
         this.qteVoulue = qteVoulue;
     }
 
-    public Lignepanier() {
+    public LignePanier() {
 
     }
 

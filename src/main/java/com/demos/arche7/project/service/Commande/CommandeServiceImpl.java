@@ -3,6 +3,7 @@ package com.demos.arche7.project.service.Commande;
 import com.demos.arche7.project.controller.ArticleController;
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Commande;
+import com.demos.arche7.project.repository.ArticleRepository;
 import com.demos.arche7.project.repository.CommandeRepository;
 import exception.StockException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,8 @@ public class CommandeServiceImpl implements CommandeService {
 
     @Autowired
     CommandeRepository commandeRepository;
-    private ArticleController articleRepository;
+    @Autowired
+    private ArticleRepository articleRepository;
 
     public CommandeServiceImpl(CommandeRepository commandeRepository) {
         this.commandeRepository = commandeRepository;
@@ -30,7 +32,7 @@ public class CommandeServiceImpl implements CommandeService {
     public Commande saveCommande(Commande commande) {
         return commandeRepository.save(commande);
     }
-
+    // cette fonction permet de calculer le stock los de la création de la commande, inclus l'exception avec message en cas de stock insuffisant
     @Transactional(rollbackFor = StockException.class)
     public void creeCommande(Article article, int qteVoulue) throws StockException {
         Commande commande = new Commande(article,qteVoulue);

@@ -6,18 +6,21 @@ import com.demos.arche7.project.service.Livre.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/livres")
 @CrossOrigin
 public class LivreController {
     @Autowired
-    private LivreService livreService;
+    LivreService livreService;
     @Autowired
     private LivreRepository livreRepository;
 
     //construction de la méthode read avec le verb Get pour recupérer les articles
     @GetMapping("/{id}")
     public Iterable<Livre> read() {
+
         return livreService.getAllLivres();
     }
 
@@ -28,9 +31,10 @@ public class LivreController {
         return livreService.saveLivre(livre);
     }
 
-
-
-
+    @GetMapping(params = "/{titre}")
+    public List<Livre> rechercheParTitre(@RequestParam String titre){
+        return livreService.findByTitre(titre);
+    }
 
 
 

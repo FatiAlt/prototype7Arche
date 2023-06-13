@@ -22,8 +22,6 @@ public class CommandeController {
     @Autowired
     private CommandeRepository commandeRepository;
 
-
-
     @PostMapping()
     //Créer une fonction qui test la première commande avec le stock, qui est pour l'instant insuffisant
     public void essaiCreationCommande() {
