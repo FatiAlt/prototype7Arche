@@ -1,6 +1,5 @@
 package com.demos.arche7.project.service.Commande;
 
-import com.demos.arche7.project.controller.ArticleController;
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Commande;
 import com.demos.arche7.project.repository.ArticleRepository;
@@ -15,13 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class CommandeServiceImpl implements CommandeService {
 
     @Autowired
-    CommandeRepository commandeRepository;
+    private CommandeRepository commandeRepository;
     @Autowired
     private ArticleRepository articleRepository;
 
-    public CommandeServiceImpl(CommandeRepository commandeRepository) {
-        this.commandeRepository = commandeRepository;
-    }
+
 
     @Override
     public Iterable<Commande> getAllCommandes() {

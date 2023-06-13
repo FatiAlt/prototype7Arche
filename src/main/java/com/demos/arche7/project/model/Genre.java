@@ -9,22 +9,22 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    private String nom;
+    private String nomGenre;
 
-    public Genre(Long id, String nom) {
+    public Genre(Long id, String nomGenre) {
         this.id = id;
-        this.nom = nom;
+        this.nomGenre = nomGenre;
     }
 
     public Genre() {
 
     }
-    public String getNom() {
-        return nom;
+    public String getNomGenre() {
+        return nomGenre;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNomGenre(String nom) {
+        this.nomGenre = nom;
     }
 
     public Long getId() {

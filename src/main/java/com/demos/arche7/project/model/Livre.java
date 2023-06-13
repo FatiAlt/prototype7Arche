@@ -13,12 +13,14 @@ public class Livre extends Article {
     private String format;
     private String numeroIsbn13;
     private int nbPage;
+    private String image;
 
-    public Livre(String titre, String format, double tva, String numeroIsbn13, int nbPage) {
+    public Livre(String titre, String format, String numeroIsbn13, int nbPage, String image) {
         this.titre = titre;
         this.format = format;
         this.numeroIsbn13 = numeroIsbn13;
         this.nbPage = nbPage;
+        this.image = image;
     }
 
     public Livre() {
@@ -51,6 +53,14 @@ public class Livre extends Article {
 
     public void setNbPage(int nbPage) {
         this.nbPage = nbPage;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
 

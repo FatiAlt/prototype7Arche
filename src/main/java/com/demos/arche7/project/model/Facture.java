@@ -1,9 +1,6 @@
 package com.demos.arche7.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -11,11 +8,16 @@ import java.util.Date;
 @Table(name="facture")
 public class Facture {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "date")
     private Date date;
+    @Column(name = "prix_ht")
     private float prixHt;
+    @Column(name = "tva")
     private double tva = 0.2;
+    @Column(name = "prix_ttc")
     private float prixTtc;
 
 
@@ -26,6 +28,9 @@ public class Facture {
         this.tva = tva;
         this.prixTtc = prixTtc;
     }
+    @OneToOne
+    @JoinColumn(name = "commande_id")
+    private Commande commande;
 
     public Facture() {
     }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class GenreServiceImpl implements GenreService{
     @Autowired
@@ -19,11 +20,13 @@ public class GenreServiceImpl implements GenreService{
 
     @Override
     public List<Genre> findByGenre(String nomGenre) {
-        return genreRepository.save(nomGenre);
+        return genreRepository.findByGenre(nomGenre);
     }
 
     @Override
     public Genre saveGenre(Genre genre) {
-        return genreRepository.findByGenre(genre);
+        return genreRepository.save(genre);
     }
+
+
 }

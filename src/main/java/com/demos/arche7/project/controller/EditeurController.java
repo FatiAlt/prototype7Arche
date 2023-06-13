@@ -1,7 +1,6 @@
 package com.demos.arche7.project.controller;
 
 import com.demos.arche7.project.model.Editeur;
-import com.demos.arche7.project.repository.EditeurRepository;
 import com.demos.arche7.project.service.Editeur.EditeurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

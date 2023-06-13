@@ -5,10 +5,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
+
 public interface GenreRepository extends CrudRepository<Genre, Long> {
-    public Iterable<Genre> findAll();
+    Iterable<Genre> findAll();
 
-    public List<Genre> save(String nomGenre);
+     List<Genre> save(String nomGenre);
 
-    public Genre findByGenre(Genre genre);
+
+    List<Genre> findByGenre(String nomGenre);
 }

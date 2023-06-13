@@ -27,7 +27,7 @@ public class CommandeController {
     public void essaiCreationCommande() {
         System.out.println("essai création commande");
         // première commande échoue cause du stock
-        Optional<Article> article1 = commandeRepository.findById(31);
+        Optional<Article> article1 = commandeRepository.findById(3);
         if (article1.isPresent()) {
             try {
                 System.out.println("commande de " + article1.get().getDesignation());
@@ -38,5 +38,22 @@ public class CommandeController {
         } else {
             System.out.println("pb optional 1");
         }
+        // deuxième commande correcte
+        Optional<Article> article2 = commandeRepository.findById(2);
+        if (article2.isPresent()) {
+            try {
+                System.out.println("commande de " + article2.get().getDesignation());
+                commandeService.creeCommande(article2.get(), 1);
+            } catch (StockException ex) {
+                System.out.println(ex.getMessage());
+            }
+        } else {
+                System.out.println("pb optional 2");
+            }
+        }
+
     }
-}
+
+
+
+

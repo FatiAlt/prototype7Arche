@@ -1,27 +1,34 @@
 package com.demos.arche7.project.model;
 import jakarta.persistence.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Entity
 @Table(name = "articles")
-@CrossOrigin
+@Inheritance(strategy=InheritanceType.JOINED)
 
 public class Article {
-
-
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(name="id", nullable = false)
+        protected Long id;
+        @Column(name = "reference", nullable = false, length = 30, unique = true)
         private String ref;
+        @Column(name = "designation")
         private String designation;
+        @Column(name = "prix_ht")
         private double prixHt;
+        @Column(name = "tva")
         private double tva = 0.2;
+        @Column(name="type")
         private String type;
+        @Column(name="format")
         private String format;
+        @Column(name="resume")
         private String resume;
+        @Column(name = "art_num")
+        private  boolean articleNumerique;//cet attribu permet de vérifier si l'article est physique ou numérique
 
 
-        public Article(Long id, String ref, String designation, double prixHt, double tva, String type, String format, String resume, Stock stock) {
+        public Article(Long id, String ref, String designation, double prixHt, double tva, String type, String format, String resume, boolean articleNumerique, Stock stock) {
             this.id = id;
             this.ref = ref;
             this.designation = designation;
@@ -30,6 +37,7 @@ public class Article {
             this.type = type;
             this.format = format;
             this.resume = resume;
+            this.articleNumerique = articleNumerique;
             this.stock = stock;
         }
 
@@ -39,11 +47,9 @@ public class Article {
     // Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table
         @Embedded
         @AttributeOverrides({
-            @AttributeOverride( name = "qte", column = @Column(name = "stock"))
+                @AttributeOverride( name = "qte_voulue", column = @Column(name = "stock"))
     })
         private Stock stock;
-
-
 
     @ManyToOne()
         @JoinColumn(name="ligne_Commande_id")
@@ -56,7 +62,6 @@ public class Article {
     public void setLigneCommande(LigneCommande ligneCommande) {
         this.ligneCommande = ligneCommande;
     }
-
 
     public Long getId() {
             return id;

@@ -23,20 +23,20 @@ public class LignePanier {
         this.article = article;
         this.qteVoulue = qteVoulue;
     }
-
     public LignePanier() {
-
     }
 
     public Long getId() {
         return id;
     }
-
     public int getQteVoulue() {
         return qteVoulue;
     }
-
     public void setQteVoulue(int qteVoulue) {
         this.qteVoulue = qteVoulue;
+    }
+
+    public void setPanier(Panier panier) {
+        this.panier = panier;
     }
 }
