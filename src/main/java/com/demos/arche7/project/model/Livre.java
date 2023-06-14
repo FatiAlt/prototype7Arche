@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Table(name = "livre")
 @PrimaryKeyJoinColumn(name="id")
 public class Livre extends Article {
-    @Column(name = "livre")
+    @Column(name = "titre")
     private String titre;
     @Column(name = "format")
     private String format;

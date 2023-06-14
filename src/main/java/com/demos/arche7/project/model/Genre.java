@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+    @Column(name = "id", nullable = false)
+    protected Long id;
     private String nomGenre;
 
     public Genre(Long id, String nomGenre) {

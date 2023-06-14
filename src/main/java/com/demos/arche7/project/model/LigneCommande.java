@@ -9,7 +9,6 @@ public class LigneCommande {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-
     protected Long id;
 
     @ManyToOne

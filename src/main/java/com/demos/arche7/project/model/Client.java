@@ -4,11 +4,13 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="client")
+@PrimaryKeyJoinColumn(name = "id")
+
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "id")
+    protected Long id;
     @Column(name = "nom")
     private String nom;
     @Column(name = "prenom")
@@ -32,6 +34,10 @@ public class Client {
     @ManyToOne
     @JoinColumn(name = "panier_id")
     private Panier Panier;
+
+/*    @OneToOne(mappedBy = "client")
+    @Column(name = "adresse_id")
+    private Adresse adresse;*/
 
     public Client() {
 
@@ -83,4 +89,21 @@ public class Client {
                 ", password='" + password + '\'' +
                 '}';
     }
+    public Commande getCommande() {
+        return commande;
+    }
+
+    public void setCommande(Commande commande) {
+        this.commande = commande;
+    }
+/*
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
+    }
+*/
+
 }

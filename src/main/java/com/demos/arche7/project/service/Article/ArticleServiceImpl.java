@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -33,5 +34,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> findByDesignation(String designation) {
         return articleRepository.findArticlesByDesignationContains(designation);
+    }
+
+    @Override
+    public Optional<Article> findById(Long id) {
+        return articleRepository.findById(id);
     }
 }

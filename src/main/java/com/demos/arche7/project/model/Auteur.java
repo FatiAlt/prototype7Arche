@@ -9,7 +9,8 @@ import jakarta.persistence.*;
 public class Auteur {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "id", nullable = false)
+    protected Long id;
     private String nom;
 
     private String prenom;

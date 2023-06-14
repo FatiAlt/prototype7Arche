@@ -10,7 +10,7 @@ public class Facture {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    protected Long id;
     @Column(name = "date")
     private Date date;
     @Column(name = "prix_ht")

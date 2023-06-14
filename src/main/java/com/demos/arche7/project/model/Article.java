@@ -2,7 +2,7 @@ package com.demos.arche7.project.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "articles")
+@Table(name = "article")
 @Inheritance(strategy=InheritanceType.JOINED)
 
 public class Article {
@@ -18,8 +18,8 @@ public class Article {
         private double prixHt;
         @Column(name = "tva")
         private double tva = 0.2;
-        @Column(name="type")
-        private String type;
+        @Column(name="genre")
+        private String genre; //type d'article vendu, voir pour un autre nom
         @Column(name="format")
         private String format;
         @Column(name="resume")
@@ -34,7 +34,7 @@ public class Article {
             this.designation = designation;
             this.prixHt = prixHt;
             this.tva = tva;
-            this.type = type;
+            this.genre = type;
             this.format = format;
             this.resume = resume;
             this.articleNumerique = articleNumerique;
@@ -47,21 +47,11 @@ public class Article {
     // Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table
         @Embedded
         @AttributeOverrides({
-                @AttributeOverride( name = "qte_voulue", column = @Column(name = "stock"))
+                @AttributeOverride( name = "stock", column = @Column(name = "quantite_total"))
     })
         private Stock stock;
 
-    @ManyToOne()
-        @JoinColumn(name="ligne_Commande_id")
-        private LigneCommande ligneCommande;
 
-    public LigneCommande getLigneCommande() {
-        return ligneCommande;
-    }
-
-    public void setLigneCommande(LigneCommande ligneCommande) {
-        this.ligneCommande = ligneCommande;
-    }
 
     public Long getId() {
             return id;
@@ -104,12 +94,12 @@ public class Article {
         return prixHt*(1+tva);
     }
 
-        public String getType() {
-            return type;
+        public String getGenre() {
+            return genre;
         }
 
-        public void setType(String image) {
-            this.type = image;
+        public void setGenre(String image) {
+            this.genre = image;
         }
 
         public String getFormat() {
@@ -136,7 +126,7 @@ public class Article {
                     ", designation='" + designation + '\'' +
                     ", prixHt=" + prixHt +
                     ", tva=" + tva +
-                    ", image='" + type + '\'' +
+                    ", image='" + genre + '\'' +
                     ", format='" + format + '\'' +
                     "resume='" + resume + '\'' +
                     '}';
@@ -149,6 +139,14 @@ public class Article {
 
     public void setStock(Stock stock) {
         this.stock = stock;
+    }
+
+    public boolean isArticleNumerique() {
+        return articleNumerique;
+    }
+
+    public void setArticleNumerique(boolean articleNumerique) {
+        this.articleNumerique = articleNumerique;
     }
 }
 

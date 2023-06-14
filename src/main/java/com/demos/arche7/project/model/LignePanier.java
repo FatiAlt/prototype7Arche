@@ -8,7 +8,7 @@ public class LignePanier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @Column(name="id", nullable = false)
     protected Long id;
     @ManyToOne
     @JoinColumn(name="article_id")

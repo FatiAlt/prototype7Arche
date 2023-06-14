@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class LivreServiceImpl implements LivreService {
 
@@ -27,4 +29,11 @@ public class LivreServiceImpl implements LivreService {
     public List<Livre> findByTitre(String titre) {
         return livreRepository.findByTitre(titre);
     }
+
+    @Override
+    public Optional<Livre> findById(Long id) {
+        return livreRepository.findById(id);
+    }
+
+
 }

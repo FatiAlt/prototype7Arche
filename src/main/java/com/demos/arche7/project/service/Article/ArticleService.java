@@ -3,6 +3,7 @@ package com.demos.arche7.project.service.Article;
 import com.demos.arche7.project.model.Article;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ArticleService {
     Iterable<Article> getAllArticles();
@@ -15,5 +16,7 @@ public interface ArticleService {
     Article rechercheRef(String ref);
 
     List<Article> findByDesignation(String designation);
+
+    Optional<Article> findById(Long id);
 }
 
