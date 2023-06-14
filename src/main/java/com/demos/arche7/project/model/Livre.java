@@ -1,5 +1,6 @@
 package com.demos.arche7.project.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
@@ -8,11 +9,15 @@ import jakarta.persistence.Table;
 @Table(name = "livre")
 @PrimaryKeyJoinColumn(name="id")
 public class Livre extends Article {
-
+    @Column(name = "livre")
     private String titre;
+    @Column(name = "format")
     private String format;
+    @Column(name = "isbn13")
     private String numeroIsbn13;
+    @Column(name = "nb_page")
     private int nbPage;
+    @Column(name = "image")
     private String image;
 
     public Livre(String titre, String format, String numeroIsbn13, int nbPage, String image) {

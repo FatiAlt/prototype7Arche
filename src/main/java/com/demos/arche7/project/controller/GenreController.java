@@ -18,14 +18,13 @@ public class GenreController {
     public Iterable<Genre> read() {
         return genreService.getAllGenres();
     }
-
     @PostMapping("/{id}")
     public Genre save (@RequestBody Genre genre) {
         return genreService.saveGenre(genre);
     }
-    @GetMapping(params = {"/nom"})
+  /*  @GetMapping(params = {"/nom"})
     public List<Genre> rechercheParGenre(@RequestParam String nomGenre) {
         return genreService.findByGenre(nomGenre);
-    }
+    }*/
 
 }

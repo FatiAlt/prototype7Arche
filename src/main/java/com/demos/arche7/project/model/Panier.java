@@ -50,7 +50,7 @@ public class Panier {
     public double getPrixTotalTtc() {
         return prixTotalTtc;
     }
-    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "panier")
+/*    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "panier")
     private List<LignePanier> ajout;
 
     {
@@ -63,8 +63,8 @@ public class Panier {
     public Panier(Article article, int qte_voulue) {
         LignePanier lp = new LignePanier(article,qte_voulue);
         ajout.add(lp);
-        // important de faire le lien entre commande et ligne commande
+        // important de faire le lien entre panier et ligne panier
         lp.setPanier(this);
 
-    }
+    }*/
 }

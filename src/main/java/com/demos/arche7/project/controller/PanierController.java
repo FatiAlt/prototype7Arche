@@ -21,10 +21,10 @@ public class PanierController {
     @Autowired
     private PanierRepository panierRepository;
 
-    @PostMapping()
+/*    @PostMapping()
     public void essaiCreationPanier() {
         System.out.println("appel création panier");
-        // première commande devant échouer car stock insuffisant
+        //  client choisi un article pour le mettre dans le panier mais c'est un échec car stock insuffisant
         Optional<Article> article1 = panierRepository.findById(7);
         if (article1.isPresent()) {
             try {
@@ -37,5 +37,5 @@ public class PanierController {
                 System.out.println("pb optional 1");
             }
 
-        }
+        }*/
     }

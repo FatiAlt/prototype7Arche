@@ -18,11 +18,11 @@ public class GenreServiceImpl implements GenreService{
         return genreRepository.findAll();
     }
 
-    @Override
+    /*@Override
     public List<Genre> findByGenre(String nomGenre) {
         return genreRepository.findByGenre(nomGenre);
     }
-
+*/
     @Override
     public Genre saveGenre(Genre genre) {
         return genreRepository.save(genre);

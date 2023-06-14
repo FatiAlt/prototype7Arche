@@ -7,7 +7,7 @@ import java.util.List;
 public interface GenreService {
     Iterable<Genre> getAllGenres();
 
-    List<Genre> findByGenre(String nomGenre);
+    //List<Genre> findByGenre(String nomGenre);
 
     Genre saveGenre(Genre genre);
 }
