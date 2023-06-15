@@ -1,33 +1,49 @@
 package com.demos.arche7.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="commande")
 public class Commande {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
+    protected Long id;
     private Date dateCommande;
     private int qteVoulue;
-    private float prixTotalHt;
-    private float prixTotalTtc;
+    private double prixTotalHt;
+    private double prixTotalTtc;
 
-    public Commande(Long id, Date dateCommande, int qteVoulue, float prixTotalHt, float prixTotalTtc) {
+    public Commande(Long id, Date dateCommande, int qteVoulue, double prixTotalHt, double prixTotalTtc) {
         this.id = id;
         this.dateCommande = dateCommande;
         this.qteVoulue = qteVoulue;
         this.prixTotalHt = prixTotalHt;
         this.prixTotalTtc = prixTotalTtc;
     }
+    // cascade pour entraîner également la persistance des associations, avec fetch pour récupérer les données de la commande,
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "commande")
+    private List<LigneCommande> contenu;
+
+    {
+        contenu = new ArrayList<>();
+    }
 
     public Commande() {
+
+    }
+    // constructeur ne prenant en compte qu'un seul article
+    public Commande(Article article, int qteVoulue) {
+        LigneCommande lc;
+        lc = new LigneCommande();
+        contenu.add(lc);
+        // methode qui permet de faire le lien entre commande et ligne commande
+        lc.setCommande(this);
 
     }
 
@@ -51,19 +67,19 @@ public class Commande {
         this.qteVoulue = qteVoulue;
     }
 
-    public float getPrixTotalHt() {
+    public double getPrixTotalHt() {
         return prixTotalHt;
     }
 
-    public void setPrixTotalHt(float prixTotalHt) {
+    public void setPrixTotalHt(double prixTotalHt) {
         this.prixTotalHt = prixTotalHt;
     }
 
-    public float getPrixTotalTtc() {
-        return prixTotalTtc;
+    public double getPrixTotalTtc() {
+        return  prixTotalTtc;
     }
 
-    public void setPrixTotalTtc(float prixTotalTtc) {
+    public void setPrixTotalTtc(double prixTotalTtc) {
         this.prixTotalTtc = prixTotalTtc;
     }
 
@@ -77,4 +93,5 @@ public class Commande {
                 ", prixTotalTtc=" + prixTotalTtc +
                 '}';
     }
+
 }

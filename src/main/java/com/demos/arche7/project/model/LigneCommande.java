@@ -16,36 +16,21 @@ public class LigneCommande {
     @JoinColumn(name="article_id")
     private Article article;
     private int qteVoulue;
-    private float prixHt;
-    private float prixTtc;
+
 
     @ManyToOne
     @JoinColumn(name="commande_id")
     private Commande commande;
 
-
+    //constructeur vide permet à hibernate d'instancier ls objects
     public LigneCommande() {
+
     }
 
-    public LigneCommande(Long id, Article article, int qteVoulue, float prixHt, float prixTtc, Commande commande) {
-        this.id = id;
+    public LigneCommande(Article article, int qteVoulue) {
         this.article = article;
         this.qteVoulue = qteVoulue;
-        this.prixHt = prixHt;
-        this.prixTtc = prixTtc;
-        this.commande = commande;
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    public Article getArticle() {
-        return article;
-    }
-
-    public void setArticle(Article article) {
-        this.article = article;
     }
 
     public int getQteVoulue() {
@@ -56,27 +41,19 @@ public class LigneCommande {
         this.qteVoulue = qteVoulue;
     }
 
-    public float getPrixHt() {
-        return prixHt;
-    }
-
-    public void setPrixHt(float prixHt) {
-        this.prixHt = prixHt;
-    }
-
-    public float getPrixTtc() {
-        return prixTtc;
-    }
-
-    public void setPrixTtc(float prixTtc) {
-        this.prixTtc = prixTtc;
-    }
-
     public Commande getCommande() {
         return commande;
     }
 
     public void setCommande(Commande commande) {
         this.commande = commande;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
     }
 }

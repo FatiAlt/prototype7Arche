@@ -1,8 +1,5 @@
 package com.demos.arche7.project.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 
@@ -15,15 +12,14 @@ public class Article {
 
         private String ref;
         private String designation;
-        private float prixHt;
+        private double prixHt;
         private double tva = 0.2;
         private String type;
         private String format;
-
         private String resume;
 
 
-        public Article(Long id, String ref, String designation, float prixHt, double tva, String type, String format, String resume) {
+        public Article(Long id, String ref, String designation, double prixHt, double tva, String type, String format, String resume, Stock stock) {
             this.id = id;
             this.ref = ref;
             this.designation = designation;
@@ -32,13 +28,35 @@ public class Article {
             this.type = type;
             this.format = format;
             this.resume = resume;
+            this.stock = stock;
         }
 
         public Article() {
 
         }
+    // Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table
+        @Embedded
+        @AttributeOverrides({
+            @AttributeOverride( name = "qte", column = @Column(name = "stock"))
+    })
+        private Stock stock;
 
-        public Long getId() {
+
+
+    @ManyToOne()
+        @JoinColumn(name="ligne_Commande_id")
+        private LigneCommande ligneCommande;
+
+    public LigneCommande getLigneCommande() {
+        return ligneCommande;
+    }
+
+    public void setLigneCommande(LigneCommande ligneCommande) {
+        this.ligneCommande = ligneCommande;
+    }
+
+
+    public Long getId() {
             return id;
         }
 
@@ -58,11 +76,11 @@ public class Article {
             this.designation = designation;
         }
 
-        public float getPrixHt() {
+        public double getPrixHt() {
             return prixHt;
         }
 
-        public void setPrixHt(float prixHt) {
+        public void setPrixHt(double prixHt) {
             this.prixHt = prixHt;
         }
 
@@ -73,6 +91,11 @@ public class Article {
         public void setTva(double tva) {
             this.tva = tva;
         }
+
+        //permet de calculer le prix ht et tva et apparaitra dans l'objet json, pas d'attribut ttc.
+     public double getPrixTTC() {
+        return prixHt*(1+tva);
+    }
 
         public String getType() {
             return type;
@@ -90,9 +113,13 @@ public class Article {
             this.format = format;
         }
 
-        public String getResume() { return resume; }
+        public String getResume() {
+            return resume;
+        }
 
-        public void setResume(String resume) { this.resume = resume; }
+        public void setResume(String resume) {
+            this.resume = resume;
+        }
 
         @Override
         public String toString() {
@@ -109,5 +136,12 @@ public class Article {
         }
 
 
+    public Stock getStock() {
+        return stock;
     }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
+}
 

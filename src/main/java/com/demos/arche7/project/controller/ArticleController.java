@@ -8,42 +8,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/article")
+@RequestMapping("/articles")
 @CrossOrigin
 public class ArticleController {
     @Autowired
-    private final ArticleService articleService;
-    private final ArticleRepository articleRepository;
+    private ArticleService articleService;
+    @Autowired
+    private ArticleRepository articleRepository;
 
-    public ArticleController(ArticleService articleService, ArticleRepository articleRepository) {
-        this.articleService = articleService;
-
-        this.articleRepository = articleRepository;
-    }
 
     //construction de la méthode read avec le verb Get pour recupérer les articles
-    @GetMapping("/read")
+    @GetMapping("/{id}")
     public Iterable<Article> read() {
         return articleService.getAllArticles();
-
     }
 
     //construction de la méthode create avec  le verb Post pour ajouter les articles
-    @PostMapping("/save")
+    @PostMapping("/{id}")
     public Article save (@RequestBody Article article) {
-
         return articleService.saveArticle(article);
     }
 
     //construction de la méthode Delete avec le verb Delete pour supprimer les articles
-    @DeleteMapping("/article/{id}")
+    @DeleteMapping("/{id}")
     public Article article (@PathVariable Long id) {
         return article(id);
     }
 
-    //construction de la méthode Update avec le verb Put pour mettre à jour les articles
-    @PutMapping("article/{id}")
+    //construction de la méthode Update avec le verb Put pour mettre à jour les articles avec la method responseEntity
+    @PutMapping("/{id}")
     public ResponseEntity<Article> updateArticle(@PathVariable long id, @RequestBody Article article) {
         Article updateArticle = articleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Article not exist with id:" + id));
 
@@ -58,4 +54,16 @@ public class ArticleController {
 
         return ResponseEntity.ok(updateArticle);
     }
+    // recherche en fonction de la référence (avec un paramètre de type ?ref=)
+    @GetMapping(params = {"ref"})
+    public Article findByRef (@RequestParam String ref){
+        return articleService.rechercheRef(ref);
+    }
+
+    //recherche en fonction de la désignation(params type)
+    @GetMapping(params = {"designation"})
+    public List<Article> findByDesignation(@RequestParam String designation){
+        return articleService.findByDesignation(designation);
+    }
+
 }
