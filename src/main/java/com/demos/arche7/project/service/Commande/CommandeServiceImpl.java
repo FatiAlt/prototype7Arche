@@ -1,16 +1,21 @@
 package com.demos.arche7.project.service.Commande;
 
+import com.demos.arche7.project.controller.ArticleController;
+import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Commande;
 import com.demos.arche7.project.repository.CommandeRepository;
+import exception.StockException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
-public abstract class CommandeServiceImpl implements CommandeService {
-
+public class CommandeServiceImpl implements CommandeService {
 
     @Autowired
     CommandeRepository commandeRepository;
+    private ArticleController articleRepository;
 
     public CommandeServiceImpl(CommandeRepository commandeRepository) {
         this.commandeRepository = commandeRepository;
@@ -26,5 +31,20 @@ public abstract class CommandeServiceImpl implements CommandeService {
         return commandeRepository.save(commande);
     }
 
+    @Transactional(rollbackFor = StockException.class)
+    public void creeCommande(Article article, int qteVoulue) throws StockException {
+        Commande commande = new Commande(article,qteVoulue);
+        commandeRepository.save(commande);
+        // on complète l'exception avec la désignation de l'article
+        try {
+            article.getStock().decremente(qteVoulue);
+        }
+        catch(StockException ex){
+            throw new StockException(ex.getMessage() + " " + article.getDesignation());
+        }
+        articleRepository.save(article);
+
+
+    }
 
 }
