@@ -3,7 +3,7 @@ package com.demos.arche7.project.controller;
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.repository.ArticleRepository;
 import com.demos.arche7.project.service.Article.ArticleService;
-import exception.ResourceNotFoundException;
+import com.demos.arche7.project.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface CommandeRepository extends CrudRepository<Commande,Long> {
-    Commande findCommandeById(Long Id);
+    //Commande findCommandeById(Long Id);
 
     Optional<Article> findById(int i);
 }

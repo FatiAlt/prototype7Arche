@@ -3,7 +3,7 @@ package com.demos.arche7.project.controller;
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.repository.CommandeRepository;
 import com.demos.arche7.project.service.Commande.CommandeService;
-import exception.StockException;
+import com.demos.arche7.project.exception.StockException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
