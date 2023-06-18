@@ -2,32 +2,42 @@ package com.demos.arche7.project.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "article")
+@Inheritance(strategy=InheritanceType.JOINED)
 
 public class Article {
-
-
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(name="id", nullable = false)
+        protected Long id;
+        @Column(name = "reference", nullable = false, length = 30, unique = true)
         private String ref;
+        @Column(name = "designation")
         private String designation;
+        @Column(name = "prix_ht")
         private double prixHt;
+        @Column(name = "tva")
         private double tva = 0.2;
-        private String type;
+        @Column(name="genre")
+        private String genre; //type d'article vendu, voir pour un autre nom
+        @Column(name="format")
         private String format;
+        @Column(name="resume")
         private String resume;
+        @Column(name = "art_num")
+        private  boolean articleNumerique;//cet attribu permet de vérifier si l'article est physique ou numérique
 
 
-        public Article(Long id, String ref, String designation, double prixHt, double tva, String type, String format, String resume, Stock stock) {
+        public Article(Long id, String ref, String designation, double prixHt, double tva, String type, String format, String resume, boolean articleNumerique, Stock stock) {
             this.id = id;
             this.ref = ref;
             this.designation = designation;
             this.prixHt = prixHt;
             this.tva = tva;
-            this.type = type;
+            this.genre = type;
             this.format = format;
             this.resume = resume;
+            this.articleNumerique = articleNumerique;
             this.stock = stock;
         }
 
@@ -37,23 +47,10 @@ public class Article {
     // Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table
         @Embedded
         @AttributeOverrides({
-            @AttributeOverride( name = "qte", column = @Column(name = "stock"))
+                @AttributeOverride( name = "stock", column = @Column(name = "quantite_total"))
     })
         private Stock stock;
 
-
-
-    @ManyToOne()
-        @JoinColumn(name="ligne_Commande_id")
-        private LigneCommande ligneCommande;
-
-    public LigneCommande getLigneCommande() {
-        return ligneCommande;
-    }
-
-    public void setLigneCommande(LigneCommande ligneCommande) {
-        this.ligneCommande = ligneCommande;
-    }
 
 
     public Long getId() {
@@ -97,12 +94,12 @@ public class Article {
         return prixHt*(1+tva);
     }
 
-        public String getType() {
-            return type;
+        public String getGenre() {
+            return genre;
         }
 
-        public void setType(String image) {
-            this.type = image;
+        public void setGenre(String image) {
+            this.genre = image;
         }
 
         public String getFormat() {
@@ -129,7 +126,7 @@ public class Article {
                     ", designation='" + designation + '\'' +
                     ", prixHt=" + prixHt +
                     ", tva=" + tva +
-                    ", image='" + type + '\'' +
+                    ", image='" + genre + '\'' +
                     ", format='" + format + '\'' +
                     "resume='" + resume + '\'' +
                     '}';
@@ -142,6 +139,14 @@ public class Article {
 
     public void setStock(Stock stock) {
         this.stock = stock;
+    }
+
+    public boolean isArticleNumerique() {
+        return articleNumerique;
+    }
+
+    public void setArticleNumerique(boolean articleNumerique) {
+        this.articleNumerique = articleNumerique;
     }
 }
 

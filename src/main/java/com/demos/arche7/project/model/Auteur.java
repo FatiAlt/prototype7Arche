@@ -8,8 +8,9 @@ import jakarta.persistence.*;
 
 public class Auteur {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    protected Long id;
     private String nom;
 
     private String prenom;
@@ -19,11 +20,9 @@ public class Auteur {
         this.nom = nom;
         this.prenom = prenom;
     }
-
     public Auteur() {
 
     }
-
     public Long getId() {
         return id;
 

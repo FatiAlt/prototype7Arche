@@ -2,7 +2,7 @@ package com.demos.arche7.project.service.Commande;
 
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Commande;
-import exception.StockException;
+import com.demos.arche7.project.exception.StockException;
 
 
  public interface CommandeService {

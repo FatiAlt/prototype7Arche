@@ -9,7 +9,6 @@ public class LigneCommande {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-
     protected Long id;
 
     @ManyToOne
@@ -56,4 +55,5 @@ public class LigneCommande {
     public void setArticle(Article article) {
         this.article = article;
     }
+    //rechercher les articles existants dans la base qui permet de le récupérer dans le front avec findById
 }

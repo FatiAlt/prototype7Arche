@@ -1,6 +1,6 @@
 package com.demos.arche7.project.model;
 
-import exception.StockException;
+import com.demos.arche7.project.exception.StockException;
 import jakarta.persistence.Embeddable;
 
 @Embeddable

@@ -1,4 +1,4 @@
-package exception;
+package com.demos.arche7.project.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

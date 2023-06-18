@@ -2,6 +2,9 @@ package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="panier")
 
@@ -47,8 +50,21 @@ public class Panier {
     public double getPrixTotalTtc() {
         return prixTotalTtc;
     }
+/*    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "panier")
+    private List<LignePanier> ajout;
 
+    {
+        ajout = new ArrayList<>();
+    }
     public void setPrixTotalTtc(double prixTotalTtc) {
         this.prixTotalTtc = prixTotalTtc;
     }
+    // constructeur ne prenant en compte qu'un seul article
+    public Panier(Article article, int qte_voulue) {
+        LignePanier lp = new LignePanier(article,qte_voulue);
+        ajout.add(lp);
+        // important de faire le lien entre panier et ligne panier
+        lp.setPanier(this);
+
+    }*/
 }

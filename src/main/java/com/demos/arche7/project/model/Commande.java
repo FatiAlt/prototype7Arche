@@ -12,11 +12,15 @@ public class Commande {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @Column(name = "id")
     protected Long id;
+    @Column(name = "date_commande")
     private Date dateCommande;
+    @Column(name = "qte_voulue")
     private int qteVoulue;
+    @Column(name = "prix_total_ht")
     private double prixTotalHt;
+    @Column(name = "prix_total_ttc")
     private double prixTotalTtc;
 
     public Commande(Long id, Date dateCommande, int qteVoulue, double prixTotalHt, double prixTotalTtc) {
@@ -26,8 +30,9 @@ public class Commande {
         this.prixTotalHt = prixTotalHt;
         this.prixTotalTtc = prixTotalTtc;
     }
-    // cascade pour entraîner également la persistance des associations, avec fetch pour récupérer les données de la commande,
-    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "commande")
+
+    // cascade pour entraîner également la persistance des associations, avec fetch pour récupérer les données de la commande, au fur et à mesure
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "commande")
     private List<LigneCommande> contenu;
 
     {
@@ -37,6 +42,7 @@ public class Commande {
     public Commande() {
 
     }
+
     // constructeur ne prenant en compte qu'un seul article
     public Commande(Article article, int qteVoulue) {
         LigneCommande lc;
@@ -76,7 +82,7 @@ public class Commande {
     }
 
     public double getPrixTotalTtc() {
-        return  prixTotalTtc;
+        return prixTotalTtc;
     }
 
     public void setPrixTotalTtc(double prixTotalTtc) {
@@ -94,4 +100,9 @@ public class Commande {
                 '}';
     }
 
+    public LigneCommande[] getContenu() {
+        return new LigneCommande[0];
+    }
 }
+
+

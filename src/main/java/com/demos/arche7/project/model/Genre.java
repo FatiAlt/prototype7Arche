@@ -1,23 +1,30 @@
 package com.demos.arche7.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="genre")
 public class Genre {
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    protected Long id;
+    private String nomGenre;
 
-    public Genre(Long id) {
+    public Genre(Long id, String nomGenre) {
         this.id = id;
+        this.nomGenre = nomGenre;
     }
 
     public Genre() {
 
+    }
+    public String getNomGenre() {
+        return nomGenre;
+    }
+
+    public void setNomGenre(String nom) {
+        this.nomGenre = nom;
     }
 
     public Long getId() {

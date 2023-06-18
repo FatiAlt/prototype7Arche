@@ -3,15 +3,16 @@ package com.demos.arche7.project.controller;
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.repository.ArticleRepository;
 import com.demos.arche7.project.service.Article.ArticleService;
-import exception.ResourceNotFoundException;
+import com.demos.arche7.project.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/articles")
+@RequestMapping("/article")
 @CrossOrigin
 public class ArticleController {
     @Autowired
@@ -21,13 +22,17 @@ public class ArticleController {
 
 
     //construction de la méthode read avec le verb Get pour recupérer les articles
-    @GetMapping("/{id}")
-    public Iterable<Article> read() {
+    @GetMapping
+    public Iterable<Article> readAll() {
         return articleService.getAllArticles();
+    }
+    @GetMapping("/{id}")
+    public Optional<Article> readById(Long id) {
+        return articleService.findById(id);
     }
 
     //construction de la méthode create avec  le verb Post pour ajouter les articles
-    @PostMapping("/{id}")
+    @PostMapping
     public Article save (@RequestBody Article article) {
         return articleService.saveArticle(article);
     }
@@ -48,7 +53,7 @@ public class ArticleController {
         updateArticle.setFormat(article.getFormat());
         updateArticle.setResume(article.getResume());
         updateArticle.setPrixHt(article.getPrixHt());
-        updateArticle.setType(article.getType());
+        updateArticle.setGenre(article.getGenre());
 
         articleRepository.save(updateArticle);
 

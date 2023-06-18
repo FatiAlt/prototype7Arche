@@ -1,19 +1,23 @@
 package com.demos.arche7.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="adresse")
+@PrimaryKeyJoinColumn(name = "id")
+
 public class Adresse {
 	@Id
-	@GeneratedValue
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column( name = "id")
+	protected Long id;
+	@Column(name = "N°")
 	private int numero;
+	@Column(name = "rue")
 	private String nomRue;
+	@Column(name = "code_postal")
 	private int codePostal;
+	@Column(name = "ville")
 	private String ville;
 
 	public Adresse(Long id, int numero, String nomRue, int codePostal, String ville) {
@@ -23,6 +27,12 @@ public class Adresse {
 		this.codePostal = codePostal;
 		this.ville = ville;
 	}
+
+/*
+	@OneToOne
+	@JoinColumn(name = "id_client")
+	private Client client;
+*/
 
 	public Adresse() {
 	}
@@ -73,4 +83,11 @@ public class Adresse {
                 ", ville='" + ville + '\'' +
                 '}';
     }
+/*	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}*/
 }
