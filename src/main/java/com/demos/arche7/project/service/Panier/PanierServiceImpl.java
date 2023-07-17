@@ -9,7 +9,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PanierServiceImpl implements PanierService{
-    @Autowired
+    @Override
+    public Panier savePanier(Panier panier) {
+        return null;
+    }
+
+    @Override
+    public void creePanier(Article article, int qteVoulue) throws StockException {
+
+    }
+/*    @Autowired
     private PanierRepository panierRepository;
     @Override
         public Panier savePanier(Panier panier) {
@@ -19,6 +28,6 @@ public class PanierServiceImpl implements PanierService{
     @Override
     public void creePanier(Article article, int qteVoulue) throws StockException {
 
-    }
+    }*/
 }
 

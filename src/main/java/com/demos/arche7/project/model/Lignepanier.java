@@ -15,9 +15,7 @@ public class LignePanier {
     private Article article;
 
     private int qteVoulue;
-    @ManyToOne
-    @JoinColumn(name="panier_id")
-    private Panier panier;
+
 
     public LignePanier(Article article, int qteVoulue) {
         this.article = article;
@@ -36,7 +34,4 @@ public class LignePanier {
         this.qteVoulue = qteVoulue;
     }
 
-    public void setPanier(Panier panier) {
-        this.panier = panier;
-    }
 }
