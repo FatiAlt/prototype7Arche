@@ -1,6 +1,7 @@
 C'est une application de librairie de vente de livres dans le domaine du cinéma, qui se nomme septArche. 
 
 J'utilise SpringBoot pour construire l'app en back, et mySql pour la base de donnée.
+localhost:8080
 
 J'  ai choisi SpringBoot car c'est un framework JAVA qui facilite l'automatisation du code.
 
