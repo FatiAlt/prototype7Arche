@@ -42,10 +42,9 @@ public class LivreController {
     public List<Livre> rechercheParTitre(@RequestParam String titre){
         return livreService.findByTitre(titre);
     }
-    @GetMapping("/{id}")
-    public Iterable<Editeur> read() {
-        return editeurService.getAllEditeurs();
-    }
+//    @GetMapping("/{id}")
+//    public Iterable<Editeur> searchById() {return editeurService.getAllEditeurs();
+//    }
 
     @PostMapping("/{id}")
     public Editeur save (@RequestBody Editeur editeur) {

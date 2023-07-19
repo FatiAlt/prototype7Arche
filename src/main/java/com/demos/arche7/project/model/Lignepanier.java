@@ -2,23 +2,22 @@ package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name="ligne_panier")
+
 public class LignePanier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     protected Long id;
-    @ManyToOne
+/*    @ManyToOne
     @JoinColumn(name="article_id")
-    private Article article;
+    private Article article;*/
 
     private int qteVoulue;
 
 
     public LignePanier(Article article, int qteVoulue) {
-        this.article = article;
+//        this.article = article;
         this.qteVoulue = qteVoulue;
     }
     public LignePanier() {
