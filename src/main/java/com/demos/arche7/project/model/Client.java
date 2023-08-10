@@ -31,9 +31,9 @@ public class Client {
     @JoinColumn(name = "commande_id")
     private  Commande commande;
 
-    @ManyToOne
-    @JoinColumn(name = "panier_id")
-    private Panier Panier;
+//    @ManyToOne
+//    @JoinColumn(name = "panier_id")
+//    private Panier Panier;
 
 /*    @OneToOne(mappedBy = "client")
     @Column(name = "adresse_id")

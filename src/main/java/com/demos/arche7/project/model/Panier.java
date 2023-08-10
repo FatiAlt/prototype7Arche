@@ -2,12 +2,6 @@ package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Entity
-@Table(name="panier")
-
 public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

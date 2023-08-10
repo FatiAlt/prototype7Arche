@@ -28,11 +28,11 @@ public class Adresse {
 		this.ville = ville;
 	}
 
-/*
+
 	@OneToOne
 	@JoinColumn(name = "id_client")
 	private Client client;
-*/
+
 
 	public Adresse() {
 	}
@@ -83,11 +83,5 @@ public class Adresse {
                 ", ville='" + ville + '\'' +
                 '}';
     }
-/*	public Client getClient() {
-		return client;
-	}
 
-	public void setClient(Client client) {
-		this.client = client;
-	}*/
 }
