@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     protected Long id;
     @Column(name = "nom")
@@ -35,9 +35,9 @@ public class Client {
 //    @JoinColumn(name = "panier_id")
 //    private Panier Panier;
 
-/*    @OneToOne(mappedBy = "client")
-    @Column(name = "adresse_id")
-    private Adresse adresse;*/
+    @OneToOne(mappedBy = "client")
+    @JoinColumn(name = "adresse_id")
+    private Adresse adresse;
 
     public Client() {
 
@@ -96,7 +96,7 @@ public class Client {
     public void setCommande(Commande commande) {
         this.commande = commande;
     }
-/*
+
     public Adresse getAdresse() {
         return adresse;
     }
@@ -104,6 +104,6 @@ public class Client {
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
-*/
+
 
 }

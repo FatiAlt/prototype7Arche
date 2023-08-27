@@ -22,7 +22,7 @@ Se rendre sur Spring Initializr : https://start.spring.io/
 1. Ajouter les dépendances suivantes :
 - MAVEN :   * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.5/maven-plugin/reference/html/)
             * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-- jar
+- war
 - Spring Web : * [Spring Web](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#web)
 - Spring Data JPA : * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#data.sql.jpa-and-spring-data)
 - Spring Dev Tools : * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#using.devtools)

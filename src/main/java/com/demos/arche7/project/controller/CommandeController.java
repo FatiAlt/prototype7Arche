@@ -1,14 +1,14 @@
 package com.demos.arche7.project.controller;
 
+import com.demos.arche7.project.exception.ResourceNotFoundException;
 import com.demos.arche7.project.model.Article;
+import com.demos.arche7.project.model.Commande;
 import com.demos.arche7.project.repository.CommandeRepository;
 import com.demos.arche7.project.service.Commande.CommandeService;
 import com.demos.arche7.project.exception.StockException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -50,6 +50,23 @@ public class CommandeController {
                 System.out.println("pb optional 2");
             }
         }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Commande> updateCommande(@PathVariable long id, @RequestBody Commande commande) {
+        Commande updateCommande = commandeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Commande does not find:" + id));
+
+        updateCommande.setDateCommande(commande.getDateCommande());
+        updateCommande.setQteVoulue(commande.getQteVoulue());
+        updateCommande.setPrixTotalHt(commande.getPrixTotalHt());
+        updateCommande.setPrixTotalTtc(commande.getPrixTotalTtc());
+
+
+        commandeRepository.save(updateCommande);
+
+        return ResponseEntity.ok(updateCommande);
+    }
+
+
 
     }
     /*    @PostMapping()

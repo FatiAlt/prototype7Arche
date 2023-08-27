@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 public class Panier {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
    protected Long id;
     private int qteTotal;

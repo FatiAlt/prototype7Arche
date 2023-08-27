@@ -1,4 +1,16 @@
 package com.demos.arche7.project.repository;
 
-public interface ClientRepository {
+import com.demos.arche7.project.model.Client;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface ClientRepository extends CrudRepository<Client, Long> {
+
+    Optional<Client> findById(long id);
+
+    Client findByRef(String ref);
+
+    List<Client> findClientsByDesignationContains(String designation);
 }

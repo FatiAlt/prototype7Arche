@@ -3,6 +3,7 @@ package com.demos.arche7.project.service.Auteur;
 import com.demos.arche7.project.model.Auteur;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AuteurService {
     Iterable<Auteur> getAllAuteurs();
@@ -14,4 +15,5 @@ public interface AuteurService {
     List<Auteur> findByPrenom(String prenom);
 
 
+    Optional<Auteur> getFindById(long id);
 }
