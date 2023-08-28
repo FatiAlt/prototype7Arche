@@ -11,6 +11,8 @@ public interface GenreRepository extends CrudRepository<Genre, Long> {
 
      List<Genre> save(String nomGenre);
 
+    List<Genre> findByGenre(String nomGenre);
+
 
     /*List<Genre> findByGenre(String nomGenre);*/
 }

@@ -10,6 +10,7 @@ import com.demos.arche7.project.exception.StockException;
 
     Commande saveCommande(Commande commande);
 
+
     public void creeCommande(Article article, int qteVoulue) throws StockException;
 
 

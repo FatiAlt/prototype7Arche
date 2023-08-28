@@ -12,13 +12,15 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/livre")
+@RequestMapping("/livres")
+//@RequestMapping("/editeurs")
+
 @CrossOrigin
 public class LivreController {
     @Autowired
-    LivreService livreService;
+    private LivreService livreService;
     @Autowired
-    EditeurService editeurService;
+    private EditeurService editeurService;
     @Autowired
     private LivreRepository livreRepository;
     @Autowired
@@ -30,6 +32,8 @@ public class LivreController {
     public Iterable<Livre> readAll() {return livreService.getAllLivres(); }
     @GetMapping("/{id}")
     public Optional<Livre> readById(Long id) {return livreService.findById(id);}
+    @GetMapping("/editeur")
+    public Iterable<Editeur> read() {return editeurService.getAllEditeurs();}
 
     //construction de la méthode create avec  le verb Post pour ajouter les articles
     //je fais appel à la classe service
@@ -42,11 +46,16 @@ public class LivreController {
     public List<Livre> rechercheParTitre(@RequestParam String titre){
         return livreService.findByTitre(titre);
     }
-//    @GetMapping("/{id}")
-//    public Iterable<Editeur> searchById() {return editeurService.getAllEditeurs();
+    @GetMapping("/{id}/{editeur}")
+   public Iterable<Editeur> searchById() {return editeurService.getAllEditeurs();}
+
+//    @PostMapping()
+//    public Editeur saveByEditeur (@RequestBody Editeur editeur) {
+//        return editeurService.saveEditeur(editeur);
 //    }
 
-    @PostMapping("/{id}")
+
+    @PostMapping("/editeur")
     public Editeur save (@RequestBody Editeur editeur) {
         return editeurService.saveEditeur(editeur);
     }
@@ -55,46 +64,7 @@ public class LivreController {
     public List<Editeur> rechercheParNom(@RequestParam String nomEditeur){
         return editeurService.findByNomEditeur(nomEditeur);
     }
-    //auteur, editeur, genre mettre les méthodes
-
-
-/*@RequestMapping("/editeurs")
-@CrossOrigin
-public class EditeurController {
-    @Autowired
-    EditeurService editeurService;
-
-    @GetMapping("/{id}")
-    public Iterable<Editeur> read() {
-        return editeurService.getAllEditeurs();
-    }
-
-    @PostMapping("/{id}")
-    public Editeur save (@RequestBody Editeur editeur) {
-        return editeurService.saveEditeur(editeur);
-    }
-
-    @GetMapping(params = {"/nom"})
-    public List<Editeur> rechercheParNom(@RequestParam String nomEditeur){
-        return editeurService.findByNomEditeur(nomEditeur);
-    }
-}*/
-
-/*public class GenreController {
-    @Autowired
-    private GenreService genreService;
-
-    @GetMapping("/{id}")
-    public Iterable<Genre> read() {
-        return genreService.getAllGenres();
-    }
-    @PostMapping("/{id}")
-    public Genre save (@RequestBody Genre genre) {
-        return genreService.saveGenre(genre);
-    }
-  *//*  @GetMapping(params = {"/nom"})
-    public List<Genre> rechercheParGenre(@RequestParam String nomGenre) {
-        return genreService.findByGenre(nomGenre);
-    }*/
-
 }
+
+
+

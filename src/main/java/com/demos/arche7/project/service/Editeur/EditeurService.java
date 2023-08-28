@@ -10,4 +10,5 @@ public interface EditeurService {
     Editeur saveEditeur(Editeur editeur);
 
     List<Editeur> findByNomEditeur(String nomEditeur);
+
 }

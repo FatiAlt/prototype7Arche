@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
     @Table(name="editeur")
     public class Editeur {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
         protected Long id;
         private String nomEditeur;

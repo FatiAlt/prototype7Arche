@@ -1,9 +1,15 @@
 package com.demos.arche7.project.controller;
 
 import com.demos.arche7.project.model.Article;
+import com.demos.arche7.project.model.Auteur;
+import com.demos.arche7.project.model.Genre;
 import com.demos.arche7.project.repository.ArticleRepository;
+import com.demos.arche7.project.repository.AuteurRepository;
+import com.demos.arche7.project.repository.GenreRepository;
 import com.demos.arche7.project.service.Article.ArticleService;
 import com.demos.arche7.project.exception.ResourceNotFoundException;
+import com.demos.arche7.project.service.Auteur.AuteurService;
+import com.demos.arche7.project.service.Genre.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +24,15 @@ public class ArticleController {
     private ArticleService articleService;
     @Autowired
     private ArticleRepository articleRepository;
+    @Autowired
+    private GenreService genreService;
+    @Autowired
+    private GenreRepository genreRepository;
+
+    @Autowired
+    private AuteurService auteurService;
+    @Autowired
+    private AuteurRepository auteurRepository;
 
 
     //construction de la méthode read avec le verb Get pour recupérer les articles
@@ -53,6 +68,7 @@ public class ArticleController {
         updateArticle.setResume(article.getResume());
         updateArticle.setPrixHt(article.getPrixHt());
         updateArticle.setGenre(article.getGenre());
+        updateArticle.setTva(article.getTva());
 
         articleRepository.save(updateArticle);
 
@@ -68,6 +84,34 @@ public class ArticleController {
     @GetMapping(params = {"designation"})
     public List<Article> findByDesignation(@RequestParam String designation){
         return articleService.findByDesignation(designation);
+    }
+    @GetMapping("/genre")
+    public Iterable<Genre> read() {
+        return genreService.getAllGenres();
+    }
+    @GetMapping("/genre/{id}")
+    public Optional<Genre> readByIdGenre(Long id) {
+        return genreService.getFindById(id);
+    }
+    @PostMapping("/{id}")
+    public Genre save (@RequestBody Genre genre) {
+        return genreService.saveGenre(genre);
+    }
+
+    @GetMapping(params = {"/nom"})
+    public List<Genre> rechercheParGenre(@RequestParam String nomGenre) {
+        return genreService.findByGenre(nomGenre);
+
+    }
+
+    @GetMapping("auteur")
+    public Iterable<Auteur> readAllAuteur() {
+        return auteurService.getAllAuteurs();
+    }
+
+    @GetMapping({"auteur/{id}"})
+    public Optional<Auteur> readByAuteur(long id) {
+        return auteurService.getFindById(id);
     }
 
 }

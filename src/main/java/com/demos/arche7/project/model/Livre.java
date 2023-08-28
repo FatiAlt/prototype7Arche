@@ -31,6 +31,17 @@ public class Livre extends Article {
     public Livre() {
 
     }
+
+    @Override
+    public void setTva(double tva) {
+        super.setTva(tva);
+    }
+
+    @Override
+    public double getPrixTTC() {
+        return super.getPrixTTC();
+    }
+
     public String getTitre() {
         return titre;
     }

@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 public class Adresse {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column( name = "id")
 	protected Long id;
 	@Column(name = "N°")
@@ -20,12 +20,13 @@ public class Adresse {
 	@Column(name = "ville")
 	private String ville;
 
-	public Adresse(Long id, int numero, String nomRue, int codePostal, String ville) {
+	public Adresse(Long id, int numero, String nomRue, int codePostal, String ville, Client client) {
 		this.id = id;
 		this.numero = numero;
 		this.nomRue = nomRue;
 		this.codePostal = codePostal;
 		this.ville = ville;
+		this.client = client;
 	}
 
 

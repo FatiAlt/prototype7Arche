@@ -17,6 +17,8 @@ public interface ArticleRepository extends CrudRepository <Article,Long>{
             (String designation);
 
     Optional<Article> findById(Long id);
+
+    Article updateArticle (Article updateArticle);
 }
 
 

@@ -8,6 +8,5 @@ import java.util.List;
 public interface AuteurRepository extends CrudRepository<Auteur, Long> {
     List<Auteur> findByNom(String nom);
 
-
     List<Auteur> findByPrenom(String prenom);
 }

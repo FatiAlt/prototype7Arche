@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class LignePanier {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false)
     protected Long id;
 /*    @ManyToOne

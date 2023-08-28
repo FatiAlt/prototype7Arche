@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 
 public class Article {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name="id", nullable = false)
         protected Long id;
         @Column(name = "reference", nullable = false, length = 30, unique = true)

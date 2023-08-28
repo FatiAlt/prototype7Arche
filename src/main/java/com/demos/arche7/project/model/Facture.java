@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="facture")
 public class Facture {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     protected Long id;
     @Column(name = "date")
@@ -21,12 +21,13 @@ public class Facture {
     private float prixTtc;
 
 
-    public Facture(Long id, Date date, float prixHt, double tva, float prixTtc) {
+    public Facture(Long id, Date date, float prixHt, double tva, float prixTtc, Commande commande) {
         this.id = id;
         this.date = date;
         this.prixHt = prixHt;
         this.tva = tva;
         this.prixTtc = prixTtc;
+        this.commande = commande;
     }
     @OneToOne
     @JoinColumn(name = "commande_id")
