@@ -17,8 +17,6 @@ Hébergé sur localhost:8080
 
 ## Installation
 
-Se rendre sur Spring Initializr : https://start.spring.io/
-
 1. Ajouter les dépendances suivantes :
 - MAVEN :   * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.5/maven-plugin/reference/html/)
             * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -30,15 +28,15 @@ Se rendre sur Spring Initializr : https://start.spring.io/
 
 2. Générer le projet :
  Avec le bouton Generate, télécharger  le projet zip et l'extraire dans le dossier de votre choix.
-Importer le projet dans votre IDE.
+ Importer le projet dans votre IDE.
 
 3. La base de données :
 
-Utiliser l'outil phpMyAdmin pour la gestion de la base de données qui est gérer avec MySql.
+Utiliser l'outil phpMyAdmin pour la gestion de la base de données qui est gérer avec MySql : http://localhost:8888/phpMyAdmin5/index.php?route=/database/structure&db=7A_db
+Nom de la base de donnée: 7A_db
 
 4. Tester l'application :
-Postman permet de tester les appels API : https://www.postman.com/downloads/
-importer le fichier suivant : 
+
 
 
 ## Usage
@@ -49,6 +47,10 @@ Build project
 Run project
 
 ### API
+Postman permet de tester les appels API : https://www.postman.com/downloads/
+importer le fichier suivant : 
 
-### Lien avec le client React
+### Lien avec le client
+
+
 
