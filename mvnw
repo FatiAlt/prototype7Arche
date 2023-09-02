@@ -62,9 +62,9 @@ case "`uname`" in
     # See https://developer.apple.com/library/mac/qa/qa1170/_index.html
     if [ -z "$JAVA_HOME" ]; then
       if [ -x "/usr/libexec/java_home" ]; then
-        export JAVA_HOME="`/usr/libexec/java_home`"
+        export JAVA_HOME="`/usr/libexec/java_home`"; export JAVA_HOME
       else
-        export JAVA_HOME="/Library/Java/Home"
+        export JAVA_HOME="/Library/Java/Home"; export JAVA_HOME
       fi
     fi
     ;;
@@ -314,3 +314,4 @@ exec "$JAVACMD" \
   "-Dmaven.home=${M2_HOME}" \
   "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
   ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"
+

@@ -10,7 +10,7 @@ public interface ArticleService {
 
     Article saveArticle(Article article);
 
-   Article updateArticle(Article updateArticle);
+// Article updateArticle(Article updateArticle);
 
     Article rechercheRef(String ref);
 

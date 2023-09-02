@@ -10,14 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 @RestController
-@RequestMapping("/adresse")
+@RequestMapping("/adresses")
 
 public class AdresseController {
 
    @Autowired
    AdresseService adresseService;
-   @Autowired
-   AdresseRepository adresseRepository;
+
 
 
     //construction de la méthode read avec le verb Get pour recupérer les adresses
@@ -48,7 +47,7 @@ public class AdresseController {
     }
 
     /* construction de la méthode Update avec le verb Put pour mettre à jour l'adresse avec la method responseEntity */
-    @PutMapping("/{id}")
+/*    @PutMapping("/{id}")
     public ResponseEntity<Adresse> updateAdresse(@PathVariable long id, @RequestBody Adresse adresse) {
         Adresse updateAdresse = adresseRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Adresse not exist with id:" + id));
 
@@ -60,5 +59,5 @@ public class AdresseController {
         adresseRepository.save(adresse);
 
         return ResponseEntity.ok(adresse);
-    }
+    }*/
 }

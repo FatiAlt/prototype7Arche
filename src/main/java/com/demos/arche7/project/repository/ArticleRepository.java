@@ -4,7 +4,7 @@ import com.demos.arche7.project.model.Article;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
+
 
 
 //J'utilise le mySQL avec la méthode CRUD (CREATE, READ, UPDATE, DELETE)
@@ -16,9 +16,9 @@ public interface ArticleRepository extends CrudRepository <Article,Long>{
     List<Article> findArticlesByDesignationContains
             (String designation);
 
-    Optional<Article> findById(Long id);
-
-    Article updateArticle (Article updateArticle);
+//    Optional<Article> findById(Long id);
+//
+//    Article updateArticle (Article updateArticle);
 }
 
 

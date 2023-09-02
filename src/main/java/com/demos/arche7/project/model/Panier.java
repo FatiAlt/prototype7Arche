@@ -6,7 +6,7 @@ public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-   protected Long id;
+   private Long id;
     private int qteTotal;
     private double prixTotalHt;
     private double prixTotalTtc;
