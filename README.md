@@ -28,7 +28,7 @@ Hébergé sur localhost:8080
 
 2. Générer le projet :
  Avec le bouton Generate, télécharger  le projet zip et l'extraire dans le dossier de votre choix.
- Importer le projet dans votre IDE.
+Importer le projet dans votre IDE.
 
 3. La base de données :
 
@@ -36,7 +36,8 @@ Utiliser l'outil phpMyAdmin pour la gestion de la base de données qui est gére
 Nom de la base de donnée: 7A_db
 
 4. Tester l'application :
-
+Postman permet de tester les appels API : https://www.postman.com/downloads/
+importer le fichier suivant : 
 
 
 ## Usage
