@@ -1,4 +1,4 @@
-
+[![forthebadge](https://forthebadge.com/images/badges/cc-0.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 #Nom du site : septArche
 
 C'est une application de librairie de vente de livres dans le domaine du cinéma. Dans le cadre d'une formation en dévelopeur web, j'ai réalisé ce projet en respectant le cahier des charges
