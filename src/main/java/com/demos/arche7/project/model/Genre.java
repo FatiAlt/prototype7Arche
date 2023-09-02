@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    protected Long id;
+    @Column(name = "id")
+    private Long id;
     private String nomGenre;
 
     public Genre(Long id, String nomGenre) {

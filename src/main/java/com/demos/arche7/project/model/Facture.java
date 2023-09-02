@@ -10,7 +10,7 @@ public class Facture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    protected Long id;
+    private Long id;
     @Column(name = "date")
     private Date date;
     @Column(name = "prix_ht")
@@ -19,6 +19,9 @@ public class Facture {
     private double tva = 0.2;
     @Column(name = "prix_ttc")
     private float prixTtc;
+    @OneToOne
+    @JoinColumn(name = "commande_id")
+    private Commande commande;
 
 
     public Facture(Long id, Date date, float prixHt, double tva, float prixTtc, Commande commande) {
@@ -29,9 +32,7 @@ public class Facture {
         this.prixTtc = prixTtc;
         this.commande = commande;
     }
-    @OneToOne
-    @JoinColumn(name = "commande_id")
-    private Commande commande;
+
 
     public Facture() {
     }

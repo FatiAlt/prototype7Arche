@@ -8,11 +8,5 @@ import java.util.Optional;
 public interface ClientService {
     Client saveClient(Client client);
 
-    Optional<Client> findById(Long id);
 
-    Iterable<Client> getAllClients();
-
-    Client rechercheRef(String ref);
-
-    List<Client> findByDesignation(String designation);
 }

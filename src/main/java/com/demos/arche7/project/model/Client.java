@@ -10,7 +10,7 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    protected Long id;
+    private Long id;
     @Column(name = "nom")
     private String nom;
     @Column(name = "prenom")
@@ -19,25 +19,26 @@ public class Client {
     private String email;
     @Column(name = "mot_de_passe")
     private String password;
+    @ManyToOne
+    @JoinColumn(name = "commande_id")
+    private  Commande commande;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "adresse_id")
+    private Adresse adresse;
 
-    public Client(Long id, String nom, String prenom, String email, String password) {
+    public Client(Long id, String nom, String prenom, String email, String password, Commande commande, Adresse adresse) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.password = password;
+        this.commande = commande;
+        this.adresse = adresse;
     }
-    @ManyToOne
-    @JoinColumn(name = "commande_id")
-    private  Commande commande;
 
-//    @ManyToOne
+    //    @ManyToOne
 //    @JoinColumn(name = "panier_id")
 //    private Panier Panier;
-
-    @OneToOne(mappedBy = "client")
-    @JoinColumn(name = "adresse_id")
-    private Adresse adresse;
 
     public Client() {
 
@@ -78,17 +79,6 @@ public class Client {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
     public Commande getCommande() {
         return commande;
     }
@@ -104,6 +94,19 @@ public class Client {
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+
 
 
 }

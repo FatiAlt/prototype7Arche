@@ -7,8 +7,8 @@ public class LignePanier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", nullable = false)
-    protected Long id;
+    @Column(name="id")
+    private Long id;
 /*    @ManyToOne
     @JoinColumn(name="article_id")
     private Article article;*/

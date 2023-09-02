@@ -1,9 +1,6 @@
 package com.demos.arche7.project.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "livre")
@@ -17,15 +14,24 @@ public class Livre extends Article {
     private String numeroIsbn13;
     @Column(name = "nb_page")
     private int nbPage;
-    @Column(name = "image")
-    private String image;
+   @ManyToOne
+   @JoinColumn(name="auteur_id")
+    private Auteur auteur;
+   @OneToOne
+   @JoinColumn(name="editeur_id")
+   private Editeur editeur;
+   @ManyToOne
+   @JoinColumn(name="genre_id")
+   private Genre genre;
 
-    public Livre(String titre, String format, String numeroIsbn13, int nbPage, String image) {
+    public Livre(String titre, String format, String numeroIsbn13, int nbPage, Auteur auteur, Editeur editeur, Genre genre) {
         this.titre = titre;
         this.format = format;
         this.numeroIsbn13 = numeroIsbn13;
         this.nbPage = nbPage;
-        this.image = image;
+        this.auteur = auteur;
+        this.editeur = editeur;
+        this.genre = genre;
     }
 
     public Livre() {
@@ -71,13 +77,7 @@ public class Livre extends Article {
         this.nbPage = nbPage;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 }
 
 

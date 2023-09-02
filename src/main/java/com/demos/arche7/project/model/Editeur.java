@@ -1,7 +1,6 @@
 package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
     @Entity
     @Table(name="editeur")

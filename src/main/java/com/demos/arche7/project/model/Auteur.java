@@ -9,16 +9,15 @@ import jakarta.persistence.*;
 public class Auteur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    protected Long id;
+    @Column(name = "id")
+    private Long id;
+    private String prenom;
     private String nom;
 
-    private String prenom;
-
-    public Auteur(Long id, String nom, String prenom) {
+    public Auteur(Long id, String prenom, String nom) {
         this.id = id;
-        this.nom = nom;
         this.prenom = prenom;
+        this.nom = nom;
     }
     public Auteur() {
 

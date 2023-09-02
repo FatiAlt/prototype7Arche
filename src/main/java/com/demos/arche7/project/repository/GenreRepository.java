@@ -7,12 +7,6 @@ import java.util.List;
 
 
 public interface GenreRepository extends CrudRepository<Genre, Long> {
-    Iterable<Genre> findAll();
-
-     List<Genre> save(String nomGenre);
-
-    List<Genre> findByGenre(String nomGenre);
 
 
-    /*List<Genre> findByGenre(String nomGenre);*/
 }

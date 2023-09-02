@@ -23,10 +23,8 @@ public class ArticleServiceImpl implements ArticleService {
     public Article saveArticle(Article article) {
         return articleRepository.save(article);
     }
-    @Override
-    public Article updateArticle(Article updateArticle) {
-        return articleRepository.save(updateArticle);
-    }
+
+
     @Override
     public Article rechercheRef(String ref) {
         return articleRepository.findByRef(ref);

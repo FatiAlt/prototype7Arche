@@ -20,23 +20,5 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.save(client);
     }
 
-    @Override
-    public Optional<Client> findById(Long id) {
-        return clientRepository.findById(id);
-    }
 
-    @Override
-    public Iterable<Client> getAllClients() {
-        return clientRepository.findAll();
-    }
-
-    @Override
-    public Client rechercheRef(String ref) {
-        return clientRepository.findByRef(ref);
-    }
-
-    @Override
-    public List<Client> findByDesignation(String designation) {
-        return clientRepository.findClientsByDesignationContains(designation);
-    }
 }

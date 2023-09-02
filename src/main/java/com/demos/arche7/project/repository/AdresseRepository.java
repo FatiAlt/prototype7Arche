@@ -10,7 +10,6 @@ public interface AdresseRepository extends CrudRepository<Adresse, Long> {
     Adresse save(Adresse adresse);
 
     void deleteById(Long id);
-
     Optional<Adresse> findById(Long id);
 
 }

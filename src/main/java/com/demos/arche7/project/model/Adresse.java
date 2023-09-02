@@ -10,7 +10,7 @@ public class Adresse {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column( name = "id")
-	protected Long id;
+	private Long id;
 	@Column(name = "N°")
 	private int numero;
 	@Column(name = "rue")

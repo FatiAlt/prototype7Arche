@@ -13,7 +13,7 @@ public class Commande {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    protected Long id;
+    private Long id;
     @Column(name = "date_commande")
     private Date dateCommande;
     @Column(name = "qte_voulue")
