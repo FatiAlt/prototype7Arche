@@ -17,5 +17,7 @@ public interface ArticleService {
     List<Article> findByDesignation(String designation);
 
     Optional<Article> findById(Long id);
+
+    void delete(Long id);
 }
 

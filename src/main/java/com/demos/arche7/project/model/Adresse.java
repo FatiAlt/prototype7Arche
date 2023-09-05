@@ -19,6 +19,12 @@ public class Adresse {
 	private int codePostal;
 	@Column(name = "ville")
 	private String ville;
+	/**
+	 *
+	 */
+	@OneToOne
+	@JoinColumn(name = "id_client")
+	private Client client;
 
 	public Adresse(Long id, int numero, String nomRue, int codePostal, String ville, Client client) {
 		this.id = id;
@@ -30,9 +36,7 @@ public class Adresse {
 	}
 
 
-	@OneToOne
-	@JoinColumn(name = "id_client")
-	private Client client;
+
 
 
 	public Adresse() {

@@ -11,6 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+/**
+ *
+ *
+ * @param Commande
+ * @return void creationcommande
+ * @see Package exception (adresse)
+ */
 
 @RestController
 @RequestMapping("/commandes")

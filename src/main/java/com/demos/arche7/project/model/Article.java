@@ -2,12 +2,14 @@ package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
 
+/**
+ * @version Cette classe article est le point d'entrée de la V1
+ * @params Cette classe est crée dès la conception du site pour intégrer la V2 dans le futur en fonction du succès
+ */
 @Entity
 @Table(name = "article")
 @Inheritance(strategy = InheritanceType.JOINED)
-/*
-*
-*/
+
 
 public class Article {
     @Id

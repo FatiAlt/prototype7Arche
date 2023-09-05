@@ -11,12 +11,9 @@ Stack technique :
 - Spring Web
 - Spring Data JPA
 - Spring Test
-
- 
 Hébergé sur localhost:8080
 
 ## Installation
-
 1. Ajouter les dépendances suivantes :
 - MAVEN :   * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.5/maven-plugin/reference/html/)
             * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -31,27 +28,25 @@ Hébergé sur localhost:8080
 Importer le projet dans votre IDE.
 
 3. La base de données :
-
-Utiliser l'outil phpMyAdmin pour la gestion de la base de données qui est gérer avec MySql : http://localhost:8888/phpMyAdmin5/index.php?route=/database/structure&db=7A_db
+-Télécharger Mamp : https://www.mamp.info/en/downloads/
+-Vérifier qu'apache est bien sélectionné
+-Lancer la base de donnée avec le bouton Start
+Connecter vous sur phpMyAdmin : http://localhost:8888/phpMyAdmin5/index.php?route=/database/structure&db=7A_db
 Nom de la base de donnée: 7A_db
 
 4. Tester l'application :
-Postman permet de tester les appels API : https://www.postman.com/downloads/
-importer le fichier suivant : 
-
 
 ## Usage
-
 Pour lancer l'application dans le terminal :
-
-Build project
-Run project
+-Build project
+-Run project
 
 ### API
 Postman permet de tester les appels API : https://www.postman.com/downloads/
 importer le fichier suivant : 
 
 ### Lien avec le client
+https://github.com/Fatiocto/7-arche_client.git
 
 
 

@@ -38,4 +38,12 @@ public class ArticleServiceImpl implements ArticleService {
     public Optional<Article> findById(Long id) {
         return articleRepository.findById(id);
     }
+
+    @Override
+    public void delete(Long id) {
+
+    }
+
+
 }
+

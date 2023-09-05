@@ -1,7 +1,9 @@
 package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
-
+/**
+ * Cette classe est hérité de la classe article, la version comportera uniquement les livres
+ */
 @Entity
 @Table(name = "livre")
 @PrimaryKeyJoinColumn(name="id")

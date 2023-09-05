@@ -1,0 +1,1 @@
+INSERT INTO `article`(`id`, `art_num`, `designation`, `format`, `prix_ht`, `reference`, `resume`, `quantite_total`, `tva`, `image`, `genre`) VALUES ('[value-1]','livres','13*21','10','3500','[value-6]','Dictionnaire: mots clés...','0','0.2','https://www.livres-cinema.info/cover/medium/284/2844811310.jpg','dictionnaire')

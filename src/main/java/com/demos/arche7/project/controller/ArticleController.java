@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
-
-
+/**
+ *  Connect to a phpMyAdmin database
+ *
+ * @paramurl:http://localhost:8888/phpMyAdmin5/index.php?route=/sql&pos=0&db=7A_db&table=article
+ *
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin

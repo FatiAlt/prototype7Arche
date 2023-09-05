@@ -6,6 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+/**
+ * Allows to connect to a phpMyAdmin database
+ * @see classe Article (mère)
+ * @return void
+ * @author Fatima
+ * @version 1.0
+ */
 
 @RestController
 @RequestMapping("/livres")
