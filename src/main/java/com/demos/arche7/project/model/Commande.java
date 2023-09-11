@@ -31,7 +31,11 @@ public class Commande {
         this.prixTotalTtc = prixTotalTtc;
     }
 
-    // cascade pour entraîner également la persistance des associations, avec fetch pour récupérer les données de la commande, au fur et à mesure
+    /**@param contenu contient une liste de commande
+     * @method avec la méthode fetch permet de récupérer les données de la commande au fur et à mesure
+     *
+     */
+    // cascade pour entraîner également la persistance des associations
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "commande")
     private List<LigneCommande> contenu;
 

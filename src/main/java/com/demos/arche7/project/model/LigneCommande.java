@@ -52,6 +52,11 @@ public class LigneCommande {
         return article;
     }
 
+    /**
+     * @param article permet de récupérer les articles existants dans la base
+     * @return la liste d'article
+     *
+     */
     public void setArticle(Article article) {
         this.article = article;
     }

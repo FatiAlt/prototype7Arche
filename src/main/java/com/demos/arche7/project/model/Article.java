@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 /**
  * @version Cette classe article est le point d'entrée de la V1
- * @params Cette classe est crée dès la conception du site pour intégrer la V2 dans le futur en fonction du succès
+ * Cette classe est crée dès la conception du site pour intégrer la V2 dans le futur en fonction du succès
  */
 @Entity
 @Table(name = "article")
@@ -37,6 +37,12 @@ public class Article {
     })
     private Stock stock;
 
+   /**
+    * Constructeur article qui possède un id, une référence, une désignation, prix, résumé...
+    * @param articleNumerique renvoi un boolean pour la commande d'articles numériques
+    * @param prixHt et tva, ils se calculent automatiquement
+    * @see #getPrixHt()
+    */
     public Article(Long id, String ref, String designation, double prixHt, double tva, String resume, boolean articleNumerique, Stock stock, String image) {
         this.id = id;
         this.ref = ref;

@@ -26,6 +26,14 @@ public class Livre extends Article {
    @JoinColumn(name="genre_id")
    private Genre genre;
 
+    /**
+     *
+     * @param titre afficherale titre du livre
+     * @param numeroIsbn13 chaque livre possède un ISBN13 au niveau international
+     * @param auteur l'auteur est dans une classe différente
+     * @param editeur editeur également
+     * @param genre genre également ces 3 classes sont liées à la classe livre et sont lié par l'id
+     */
     public Livre(String titre, String format, String numeroIsbn13, int nbPage, Auteur auteur, Editeur editeur, Genre genre) {
         this.titre = titre;
         this.format = format;

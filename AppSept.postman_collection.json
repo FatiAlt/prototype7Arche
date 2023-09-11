@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "51b2e845-d582-4bef-8d72-d9c48169a2ea",
+		"name": "AppSept",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27815742"
+	},
+	"item": [
+		{
+			"name": "GET http://localhost:8080/article/{{id}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ref\": \"758\",\n    \"designation\": \"Acteur, manuel de survie\",\n    \"prixHt\": 26,\n    \"tva\": 0.2,\n    \"genre\": \"brochure\",\n    \"format\": \"13*21\",\n     \"artNum\": \"false\",\n     \"resume\":\"Photos, cv, demo, castings...\",\n     \"stock\": {\"quantiteTotal\":\"1\"}\n\n     \n      \n        \n    }\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "GET http://localhost:8080/article/{{id}}",
+					"protocol": "GET http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:8080/livres/save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n     {\n        \n        \"titre\": \"cinéma engagé, cinéma enragé\",\n        \"format\": \"24cm\",\n        \"numeroIsbn13\": \"990-2-36123-180-9\",\n        \"nbPage\": \"208\",\n        \"auteur\": {\n            \"nom\": \"null\",\n            \"prenom\": \"null\"\n\n        },\n        \"editeur\" : {\n            \"nomEditeur\": \"l'Harmattan\"\n        }\n        \n        \n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/livres/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livres",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/article/params = \"ref\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "GET http://localhost:8080/article/params = \"ref\"",
+					"protocol": "GET http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"params = \"ref\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/article/{{id}}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/article/params = \"designation\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "GET http://localhost:8080/article/params = \"designation\"",
+					"protocol": "GET http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"params = \"designation\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE http://localhost:8080/article/{{id}}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ref\": \"75798\",\n    \"designation\": \"Acteur, manuel de survie\",\n    \"prixHt\": 26,\n    \"tva\": 0.2,\n    \"genre\": \"brochure\",\n    \"format\": \"13*21\",\n     \"artNum\": \"false\",\n     \"resume\":\"Photos, cv, demo, castings...\",\n     \"stock\": {\"quantiteTotal\":\"1\"},\n\n     \n      \n        \n    }\n     \n   \n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "DELETE http://localhost:8080/article/{{id}}",
+					"protocol": "DELETE http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:8080/articles/save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n   \n        \"ref\": \"2200\",\n        \"designation\": \"Nathalie Portman\",\n        \"prixHt\": 5.0,\n        \"tva\": 0.2,\n        \"genre\": null,\n        \"format\": \"13*21\",\n        \"resume\": \"Biographie de l'actrice; moment fort de sa carrière...\",\n        \"articleNumerique\": true,\n        \"stock\": {\n            \"quantiteTotal\": 1\n        },\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "POST http://localhost:8080/article",
+					"protocol": "POST http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "GET http://localhost:8080/article",
+					"protocol": "GET http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:8080/commande",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "POST http://localhost:8080/commande",
+					"protocol": "POST http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"commande"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

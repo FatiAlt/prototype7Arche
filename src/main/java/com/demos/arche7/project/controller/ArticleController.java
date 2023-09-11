@@ -9,19 +9,26 @@ import java.util.Optional;
 
 /**
  *  Connect to a phpMyAdmin database
- *
  * @paramurl:http://localhost:8888/phpMyAdmin5/index.php?route=/sql&pos=0&db=7A_db&table=article
- *
  * @version 1.0
  */
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin
+/**
+ * construction de la méthode read avec le verb Get pour recupérer les articles
+ * @param readAll qui affiche tous les articles
+ * @return une liste d'articles
+ * @param readById qui affiche les articles via leur clé
+ * @return une liste avec l'id
+ * @param findByRef qui recherche les articles avec leur référence
+ * @param findByDesignation qui recherche les articles avec une désignation ou un mot clé
+ * @param save ajoute un article
+ */
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    //construction de la méthode read avec le verb Get pour recupérer les articles
     @GetMapping
     public Iterable<Article> readAll() {
         return articleService.getAllArticles();
@@ -59,6 +66,7 @@ public class ArticleController {
 
         return ResponseEntity.ok(updateArticle);
     }*/
+
     // recherche en fonction de la référence (avec un paramètre de type ?ref=)
     @GetMapping(params = {"ref"})
     public Article findByRef (@RequestParam String ref){

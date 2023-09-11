@@ -16,6 +16,8 @@ public class EditeurController {
     public EditeurController(EditeurRepository editeurRepository) {
         this.editeurRepository = editeurRepository;
     }
+    /*    @GetMapping("/editeur")
+    public Iterable<Editeur> read() {return editeurService.getAllEditeurs();}*/
 
 
     @PostMapping("/save")

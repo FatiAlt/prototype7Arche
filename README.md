@@ -35,7 +35,6 @@ Connecter vous sur phpMyAdmin : http://localhost:8888/phpMyAdmin5/index.php?rout
 Nom de la base de donnée: 7A_db
 
 4. Tester l'application :
-
 ## Usage
 Pour lancer l'application dans le terminal :
 -Build project
@@ -43,7 +42,8 @@ Pour lancer l'application dans le terminal :
 
 ### API
 Postman permet de tester les appels API : https://www.postman.com/downloads/
-importer le fichier suivant : 
+importer le:
+[AppSept.postman_collection.json](AppSept.postman_collection.json)
 
 ### Lien avec le client
 https://github.com/Fatiocto/7-arche_client.git
