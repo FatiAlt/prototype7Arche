@@ -19,9 +19,6 @@ public class Adresse {
 	private int codePostal;
 	@Column(name = "ville")
 	private String ville;
-	/**
-	 *
-	 */
 	@OneToOne
 	@JoinColumn(name = "id_client")
 	private Client client;
@@ -34,10 +31,6 @@ public class Adresse {
 		this.ville = ville;
 		this.client = client;
 	}
-
-
-
-
 
 	public Adresse() {
 	}

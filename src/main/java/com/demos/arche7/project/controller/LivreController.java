@@ -9,7 +9,6 @@ import java.util.Optional;
 /**
  * @author Fatima
  * @version 1.0
- *
  */
 
 @RestController
@@ -20,7 +19,7 @@ public class LivreController {
     private LivreService livreService;
 
 
-    //construction de la méthode read avec le verb Get pour recupérer les livres
+    /**construction de la méthode read avec le verb Get pour recupérer les livres*/
     @GetMapping
     public Iterable<Livre> readAll() {return livreService.getAllLivres(); }
     @PostMapping("/save")
@@ -30,8 +29,8 @@ public class LivreController {
     @GetMapping("/{id}")
     public Optional<Livre> readById(Long id) {return livreService.findById(id);}
 
-    //construction de la méthode create avec  le verb Post pour ajouter les articles
-    //je fais appel à la classe service
+    /**construction de la méthode create avec  le verb Post pour ajouter les articles*/
+    /** appel à la classe service*/
 
     @GetMapping(params = "/{titre}")
     public List<Livre> rechercheParTitre(@RequestParam String titre){

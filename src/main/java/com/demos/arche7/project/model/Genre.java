@@ -2,9 +2,6 @@ package com.demos.arche7.project.model;
 
 import jakarta.persistence.*;
 
-/**
-
- */
 @Entity
 @Table(name="genre")
 public class Genre {

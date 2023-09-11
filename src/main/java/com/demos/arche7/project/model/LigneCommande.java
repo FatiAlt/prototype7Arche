@@ -21,7 +21,7 @@ public class LigneCommande {
     @JoinColumn(name="commande_id")
     private Commande commande;
 
-    //constructeur vide permet à hibernate d'instancier ls objects
+    /**constructeur vide permet à hibernate d'instancier ls objects*/
     public LigneCommande() {
 
     }
@@ -54,11 +54,10 @@ public class LigneCommande {
 
     /**
      * @param article permet de récupérer les articles existants dans la base
-     * @return la liste d'article
-     *
      */
     public void setArticle(Article article) {
         this.article = article;
     }
-    //rechercher les articles existants dans la base qui permet de le récupérer dans le front avec findById
+
+    /**rechercher les articles existants dans la base qui permet de le récupérer chez le client avec findById*/
 }

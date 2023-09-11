@@ -3,8 +3,8 @@ package com.demos.arche7.project.model;
 import jakarta.persistence.*;
 
 /**
- * @version Cette classe article est le point d'entrée de la V1
- * Cette classe est crée dès la conception du site pour intégrer la V2 dans le futur en fonction du succès
+ *  Cette classe article est le point d'entrée de la V1 où seule la vente de livre sera proposé
+ * Cette classe a été crée dès la conception du site pour intégrer la V2 dans le futur en fonction du succès
  */
 @Entity
 @Table(name = "article")
@@ -30,7 +30,7 @@ public class Article {
     private boolean articleNumerique;//cet attribu permet de vérifier si l'article est physique ou numérique
     @Column(name = "image")
     private String image;
-    // Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table
+    /** Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table*/
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "stock", column = @Column(name = "quantite_total"))

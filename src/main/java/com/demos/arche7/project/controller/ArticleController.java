@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *  Connect to a phpMyAdmin database
- * @paramurl:http://localhost:8888/phpMyAdmin5/index.php?route=/sql&pos=0&db=7A_db&table=article
+ * @author fatima
+ * @since V2
  * @version 1.0
  */
 @RestController
@@ -38,19 +38,20 @@ public class ArticleController {
         return articleService.findById(id);
     }
 
-    //construction de la méthode create avec  le verb Post pour ajouter les articles
+    /**construction de la méthode create avec  le verb Post pour ajouter les articles*/
     @PostMapping("/save")
     public Article save (@RequestBody Article article) {
         return articleService.saveArticle(article);
     }
 
-    //construction de la méthode Delete avec le verb Delete pour supprimer les articles
+    /**construction de la méthode Delete avec le verb Delete pour supprimer les articles*/
     @DeleteMapping("/{id}")
     public Article article (@PathVariable Long id) {
         return article(id);
     }
 
-    //construction de la méthode Update avec le verb Put pour mettre à jour les articles avec la method responseEntity
+    /**construction de la méthode Update avec le verb Put pour mettre à jour les articles avec la method responseEntity*/
+
 /*    @PutMapping("/{id}")
     public ResponseEntity<Article> updateArticle(@PathVariable long id, @RequestBody Article article) {
         Article updateArticle = articleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Article not exist with id:" + id));
@@ -67,13 +68,13 @@ public class ArticleController {
         return ResponseEntity.ok(updateArticle);
     }*/
 
-    // recherche en fonction de la référence (avec un paramètre de type ?ref=)
+    /**recherche en fonction de la référence (avec un paramètre de type ?ref=)*/
     @GetMapping(params = {"ref"})
     public Article findByRef (@RequestParam String ref){
         return articleService.rechercheRef(ref);
     }
 
-    //recherche en fonction de la désignation(params type)
+    /**recherche en fonction de la désignation(params type)*/
     @GetMapping(params = {"designation"})
     public List<Article> findByDesignation(@RequestParam String designation){
         return articleService.findByDesignation(designation);

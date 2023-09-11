@@ -11,13 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-/**
- *
- *
- * @param Commande
- * @return void creationcommande
- * @see Package exception (adresse)
- */
 
 @RestController
 @RequestMapping("/commandes")
@@ -29,7 +22,7 @@ public class CommandeController {
     private CommandeRepository commandeRepository;
 
     @PostMapping()
-    //Créer une fonction qui test la première commande avec le stock, qui est pour l'instant insuffisant
+    /**Créer une fonction qui test la première commande avec le stock, qui est pour l'instant insuffisant*/
     public void essaiCreationCommande() {
         System.out.println("essai création commande");
         // première commande échoue cause du stock
@@ -44,7 +37,7 @@ public class CommandeController {
         } else {
             System.out.println("pb optional 1");
         }
-        // deuxième commande correcte
+        /** deuxième commande correcte*/
         Optional<Article> article2 = commandeRepository.findById(2);
         if (article2.isPresent()) {
             try {

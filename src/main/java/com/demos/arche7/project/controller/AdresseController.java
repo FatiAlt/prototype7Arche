@@ -14,7 +14,7 @@ public class AdresseController {
    @Autowired
    AdresseService adresseService;
 
-//construction de la méthode read avec le verb Get pour recupérer les adresses
+/**construction de la méthode read avec le verb Get pour recupérer les adresses*/
 //    @GetMapping
 //    public Iterable<Adresse> readAll() {
 //        return adresseService.getAllAdresse();
@@ -29,13 +29,13 @@ public class AdresseController {
     public Iterable<Adresse> searchByAdresse()
     {return adresseService.getAllAdresse();}
 
-    //construction de la méthode create avec  le verb Post pour ajouter les articles
+    /**construction de la méthode create avec  le verb Post pour ajouter les articles*/
     @PostMapping
     public Adresse save (@RequestBody Adresse adresse) {
         return adresseService.saveAdresse(adresse);
     }
 
-    //construction de la méthode Delete avec le verb Delete pour supprimer l'adresse
+    /**construction de la méthode Delete avec le verb Delete pour supprimer l'adresse*/
     @DeleteMapping("/{id}")
     public Adresse adresse (@PathVariable Long id) {
         return adresse(id);
