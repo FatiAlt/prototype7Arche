@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Cette fonction est le point d'entrée de notre programme.
+ * Cette classe est le point d'entrée du programme.
  * Permet de lancer l'application avec la commande run
  */
 @SpringBootApplication

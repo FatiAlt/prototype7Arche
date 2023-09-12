@@ -20,25 +20,25 @@ public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
 
-    /**construction de la méthode read avec le verb Get pour recupérer les clients*/
+    /**utilisation read avec le verb Get pour recupérer les clients*/
 //    @GetMapping
 //    public Iterable<Client> readAll() {
 //        return clientService.getAllClients();
 //    }
 //
-    /**construction de la méthode create avec  le verb Post pour ajouter les articles*/
+    /**utilisation du verb Post pour ajouter les articles*/
     @PostMapping
     public Client save (@RequestBody Client client) {
         return clientService.saveClient(client);
     }
 
-    /**construction de la méthode Delete avec le verb Delete pour supprimer les articles*/
+    /**verb Delete supprime les articles par leur id*/
 //    @DeleteMapping("/{id}")
 //    public Client client (@PathVariable Long id) {
 //        return client(id);
 //    }
 
-    /**construction de la méthode Update avec le verb Put pour mettre à jour le fichier client avec la method responseEntity*/
+    /** méthode Update pour mettre à jour le fichier client*/
 /*    @PutMapping("/{id}")
     public ResponseEntity<Client> updateArticle(@PathVariable long id, @RequestBody Client client) {
         Client updateClient = clientRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("This customer does not exist with id:" + id));

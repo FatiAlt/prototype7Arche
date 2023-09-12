@@ -9,47 +9,72 @@ import java.util.Optional;
 
 /**
  * @author fatima
- * @since V2
+ * @since V1
  * @version 1.0
  */
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin
-/**
- * construction de la méthode read avec le verb Get pour recupérer les articles
- * @param readAll qui affiche tous les articles
- * @return une liste d'articles
- * @param readById qui affiche les articles via leur clé
- * @return une liste avec l'id
- * @param findByRef qui recherche les articles avec leur référence
- * @param findByDesignation qui recherche les articles avec une désignation ou un mot clé
- * @param save ajoute un article
- */
+
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    /**
+     * findAll  affiche tous les articles
+     * @return une liste d'articles
+     */
     @GetMapping
-    public Iterable<Article> readAll() {
+    public Iterable<Article> findAll() {
         return articleService.getAllArticles();
     }
+
+    /**
+     *
+     * @param id   affiche les articles via l'id
+     * @return l'id de l'article souhaité
+     */
     @GetMapping("/{id}")
-    public Optional<Article> readById(Long id) {
+    public Optional<Article> findById(Long id) {
         return articleService.findById(id);
     }
 
-    /**construction de la méthode create avec  le verb Post pour ajouter les articles*/
+    /**
+     * @param article ajoute un article
+     * @return  l'article sauvegardé
+     */
     @PostMapping("/save")
     public Article save (@RequestBody Article article) {
         return articleService.saveArticle(article);
     }
 
-    /**construction de la méthode Delete avec le verb Delete pour supprimer les articles*/
+    /**
+     * @param id supprime l'article via son id
+     * @return l'article supprimé
+     */
     @DeleteMapping("/{id}")
-    public Article article (@PathVariable Long id) {
-        return article(id);
+    public Article delete (@PathVariable Long id) {
+        return delete(id);
     }
 
+    /**
+     *
+     * @param ref recherche les articles avec leur référence
+     * @return les références des articles souhaités
+     */
+    //recherche en fonction de la référence
+    @GetMapping(params = {"ref"})
+    public Article findByRef (@RequestParam String ref){
+        return articleService.rechercheRef(ref);
+    }
+
+    /**
+     * * @param designation recherche les articles avec une désignation ou un mot clé
+     */
+    @GetMapping(params = {"designation"})
+    public List<Article> findByDesignation(@RequestParam String designation){
+        return articleService.findByDesignation(designation);
+    }
     /**construction de la méthode Update avec le verb Put pour mettre à jour les articles avec la method responseEntity*/
 
 /*    @PutMapping("/{id}")
@@ -68,18 +93,6 @@ public class ArticleController {
         return ResponseEntity.ok(updateArticle);
     }*/
 
-    /**recherche en fonction de la référence (avec un paramètre de type ?ref=)*/
-    @GetMapping(params = {"ref"})
-    public Article findByRef (@RequestParam String ref){
-        return articleService.rechercheRef(ref);
-    }
 
-    /**recherche en fonction de la désignation(params type)*/
-    @GetMapping(params = {"designation"})
-    public List<Article> findByDesignation(@RequestParam String designation){
-        return articleService.findByDesignation(designation);
-    }
-
-
-    }
+}
 

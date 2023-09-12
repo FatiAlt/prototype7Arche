@@ -2,9 +2,8 @@
 
 C'est une application de librairie de vente de livres dans le domaine du cinéma. 
 Dans le cadre d'un lancement d'une application web pour s'agrandir, le client septarche librairie a remis un cahier des charges
-en détaillant ses besoins et ses attentes. 
-https://github.com/Fatiocto/SeptArche.git (Toute la documentation est présente). 
-
+en détaillant ses besoins et ses attentes.
+https://github.com/Fatiocto/SeptArche.git (Toute la documentation est présente).
 Stack technique :
 - SpringBoot
 - MySql : * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
@@ -12,6 +11,10 @@ Stack technique :
 - Spring Data JPA
 - Spring Test
 Hébergé sur localhost:8080
+
+
+### Récupération du projet
+git clone git@github.com:Fatiocto/projet-arche-7.git
 
 ## Installation
 1. Ajouter les dépendances suivantes :

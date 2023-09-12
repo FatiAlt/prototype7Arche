@@ -30,7 +30,7 @@ public class Article {
     private boolean articleNumerique;//cet attribu permet de vérifier si l'article est physique ou numérique
     @Column(name = "image")
     private String image;
-    /** Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas d'associé la table*/
+    /** Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas associé à la table*/
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "stock", column = @Column(name = "quantite_total"))
@@ -38,7 +38,7 @@ public class Article {
     private Stock stock;
 
    /**
-    * Constructeur article qui possède un id, une référence, une désignation, prix, résumé...
+    * Constructeur possèdant les attributs cités plus haut
     * @param articleNumerique renvoi un boolean pour la commande d'articles numériques
     * @param prixHt et tva, ils se calculent automatiquement
     * @see #getPrixHt()
@@ -96,7 +96,7 @@ public class Article {
         this.tva = tva;
     }
 
-    //permet de calculer le prix ht et tva et apparaitra dans l'objet json, pas d'attribut ttc.
+    //permet de calculer le prix ht avec tva et apparaitra dans l'objet json, pas d'attribut ttc.
     public double getPrixTTC() {
         return prixHt * (1 + tva);
     }

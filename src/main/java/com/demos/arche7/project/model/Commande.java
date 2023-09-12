@@ -31,7 +31,7 @@ public class Commande {
         this.prixTotalTtc = prixTotalTtc;
     }
 
-    /**@param contenu contient une liste de commande
+    /**@param contenu contient la liste des commandes
      * @method avec la méthode fetch permet de récupérer les données de la commande au fur et à mesure
      *
      */

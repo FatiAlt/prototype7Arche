@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 /**
- * @author Fatima
+ * Cette classe est un héritage de la classe article
  * @version 1.0
  */
 
@@ -19,9 +19,15 @@ public class LivreController {
     private LivreService livreService;
 
 
-    /**construction de la méthode read avec le verb Get pour recupérer les livres*/
+    /** méthode Get pour recupérer les livres*/
     @GetMapping
     public Iterable<Livre> readAll() {return livreService.getAllLivres(); }
+    @GetMapping(params = "/{titre}")
+    public List<Livre> findByTitle(@RequestParam String titre){
+        return livreService.findByTitre(titre);
+    }
+
+    /**  méthode Post pour ajouter les livres*/
     @PostMapping("/save")
     public Livre save (@RequestBody Livre livre) {
         return livreService.saveLivre(livre);
@@ -29,13 +35,9 @@ public class LivreController {
     @GetMapping("/{id}")
     public Optional<Livre> readById(Long id) {return livreService.findById(id);}
 
-    /**construction de la méthode create avec  le verb Post pour ajouter les articles*/
-    /** appel à la classe service*/
+    //appel à la classe service
 
-    @GetMapping(params = "/{titre}")
-    public List<Livre> rechercheParTitre(@RequestParam String titre){
-        return livreService.findByTitre(titre);
-    }
+
 
 }
 

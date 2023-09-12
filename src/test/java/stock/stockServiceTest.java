@@ -60,9 +60,11 @@ public class stockServiceTest {
         boolean result = stockService.ajouterArticle(article, quantite);
 
         //Assert
-        *//**vérifie que la méthode reourne true*//*
-        assertTrue(result);
-        *//** Vérifiez que le mock a été appelé avec les bons arguments*//*
+        /**vérifie que la méthode retourne true*/
+        //assertTrue(result) {
+
+
+    /** Vérifiez que le mock a été appelé avec les bons arguments*//*
         verify(stockService, times(1)).enleverStock(article, quantite);
     }*/
 
