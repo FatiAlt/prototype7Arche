@@ -32,18 +32,18 @@ git clone git@github.com:Fatiocto/projet-arche-7.git
 Importer le projet dans votre IDE.
 
 3. La base de données :
--Télécharger Mamp : https://www.mamp.info/en/downloads/
--Vérifier qu'apache est bien sélectionné
--Lancer la base de donnée avec le bouton Start
-Connecter vous sur phpMyAdmin : http://localhost:8888/phpMyAdmin5/index.php?route=/database/structure&db=7A_db
+- Télécharger Mamp : https://www.mamp.info/en/downloads/
+- Vérifier qu'apache est bien sélectionné
+- Lancer la base de donnée avec le bouton Start
+- Connecter vous sur phpMyAdmin : http://localhost:8888/phpMyAdmin5/index.php?route=/database/structure&db=7A_db
 Nom de la base de donnée: 7A_db
 port: 8888
 
 4. Tester l'application :
 ## Usage
 Pour lancer l'application dans le terminal :
--Build project
--Run project
+- Build project
+- Run project
 
 ### API
 Postman permet de tester les appels API : https://www.postman.com/downloads/
