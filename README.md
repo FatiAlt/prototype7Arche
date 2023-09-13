@@ -5,6 +5,8 @@ Port: 8080
 # Technologies:
 Stack: React, Sass
 
+# Architecture
+![image](https://github.com/Fatiocto/7-arche_client/assets/116719823/0cf6f29b-e12b-4555-a623-e70dd0c1df3d)
 
 ## Création du projet
 'npx create-react-app 7-arche-client'
