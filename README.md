@@ -12,6 +12,9 @@ Stack technique :
 - Spring Test
 Hébergé sur localhost:8080
 
+# Architecture
+![image](https://github.com/Fatiocto/projet-arche-7/assets/116719823/a81da8f7-e86e-46a4-b3d3-17463397bb95)
+
 
 ### Récupération du projet
 git clone git@github.com:Fatiocto/projet-arche-7.git
