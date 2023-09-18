@@ -22,7 +22,7 @@ public class CommandeController {
     private CommandeRepository commandeRepository;
 
     @PostMapping()
-    /**Créer une fonction qui test la première commande avec le stock, qui est pour l'instant insuffisant*/
+    /**cette fonction est un test de la première commande avec le stock, qui est insuffisant*/
     public void essaiCreationCommande() {
         System.out.println("essai création commande");
         // première commande échoue cause du stock
@@ -37,7 +37,7 @@ public class CommandeController {
         } else {
             System.out.println("pb optional 1");
         }
-        /** deuxième commande correcte*/
+        /** deuxième commande avec un stock*/
         Optional<Article> article2 = commandeRepository.findById(2);
         if (article2.isPresent()) {
             try {
@@ -51,6 +51,13 @@ public class CommandeController {
             }
         }
 
+    /**
+     *
+     * @param id Mis à jour de la commande avec son id
+     * @return la mise à jour des attributs qui ont été modifiés et retourne un message d'exception si la commande n'a pas été trouvée
+     * @param commande sauvegardée
+     * @return une réponse entity pour confirmer la mise à jour
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Commande> updateCommande(@PathVariable long id, @RequestBody Commande commande) {
         Commande updateCommande = commandeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Commande does not find:" + id));

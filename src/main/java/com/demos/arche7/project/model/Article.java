@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 /**
  *  Cette classe article est le point d'entrée de la V1 où seule la vente de livre sera proposé
- * Cette classe a été crée dès la conception du site pour intégrer la V2 dans le futur en fonction du succès
+ * Cette classe a été crée dès la conception du site pour intégrer la V2: vente d'autres articles (dvd, cd, jeux, etc)
  */
 @Entity
 @Table(name = "article")
@@ -27,7 +27,7 @@ public class Article {
     @Column(name = "resume")
     private String resume;
     @Column(name = "art_num")
-    private boolean articleNumerique;//cet attribu permet de vérifier si l'article est physique ou numérique
+    private boolean articleNumerique;
     @Column(name = "image")
     private String image;
     /** Stock est une classe embarqué(embeded), sa valeur est insérée dans l'article donc pas associé à la table*/

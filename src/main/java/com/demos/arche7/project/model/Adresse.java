@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="adresse")
 @PrimaryKeyJoinColumn(name = "id")
+/**
+ * @version 1.0
+ * Dans cette V1, l'adresse de facturation est la même que l'adresse de livraison
+ */
 
 public class Adresse {
 	@Id

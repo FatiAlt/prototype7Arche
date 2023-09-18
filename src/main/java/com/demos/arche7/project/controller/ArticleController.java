@@ -69,7 +69,8 @@ public class ArticleController {
     }
 
     /**
-     * * @param designation recherche les articles avec une désignation ou un mot clé
+     * @param designation recherche les articles avec une désignation ou un mot clé
+     * @return l'article souhaité
      */
     @GetMapping(params = {"designation"})
     public List<Article> findByDesignation(@RequestParam String designation){

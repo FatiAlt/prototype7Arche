@@ -18,7 +18,7 @@ public class Client {
     @Column(name = "email")
     private String email;
     @Column(name = "mot_de_passe")
-    private String password;
+    private String motDePasse;
     @ManyToOne
     @JoinColumn(name = "commande_id")
     private  Commande commande;
@@ -26,12 +26,12 @@ public class Client {
     @JoinColumn(name = "adresse_id")
     private Adresse adresse;
 
-    public Client(Long id, String nom, String prenom, String email, String password, Commande commande, Adresse adresse) {
+    public Client(Long id, String nom, String prenom, String email, String motDePasse, Commande commande, Adresse adresse) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.password = password;
+        this.motDePasse = motDePasse;
         this.commande = commande;
         this.adresse = adresse;
     }
@@ -72,12 +72,12 @@ public class Client {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMotDePasse() {
+        return motDePasse;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMotDePasse(String password) {
+        this.motDePasse = password;
     }
     public Commande getCommande() {
         return commande;
@@ -102,7 +102,7 @@ public class Client {
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                ", password='" + motDePasse + '\'' +
                 '}';
     }
 

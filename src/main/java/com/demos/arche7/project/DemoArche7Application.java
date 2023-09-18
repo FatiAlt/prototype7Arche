@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Cette classe est le point d'entrée du programme.
  * Permet de lancer l'application avec la commande run
+ * @port 8080
  */
 @SpringBootApplication
 public class DemoArche7Application {
