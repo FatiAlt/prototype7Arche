@@ -1,11 +1,13 @@
 import React from 'react';
+import '../logo/_Logo.scss'
+import logo from '../../assets/logo/logo.png';
 
 const Logo = () => {
     return (
         <div className='logo'>
             {/* Les images importées depuis la balise IMG sont accessibles dans "public" */}
-            <img src='./logoSeptArche.png' alt='logo'/>
-            {/* <h3>React world</h3> */}
+            <img src={logo} alt='logo' className='logo'/>
+            {/* { <h3>SEPTARCHE LIBRAIRIE</h3> } */}
 
         </div>
     );

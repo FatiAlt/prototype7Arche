@@ -1,0 +1,12 @@
+import axios from 'axios';
+
+const registerUser = async (personne) => {
+  try {
+    const response = await axios.post('/api/register', personne);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export default registerUser;

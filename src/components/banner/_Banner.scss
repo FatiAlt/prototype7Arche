@@ -1,0 +1,22 @@
+
+.banner {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1em;
+    margin-bottom: 20px;
+    background-color: rgb(192, 45, 26);
+    color: #fff;
+  }
+
+h1 {
+   color: white;
+   text-align: center;
+    padding: 32px;
+	width: auto;
+	text-align: center;
+	flex-direction: row;
+}
+
