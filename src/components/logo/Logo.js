@@ -2,6 +2,7 @@ import React from 'react';
 import '../logo/_Logo.scss'
 import logo from '../../assets/logo/logo.png';
 
+
 const Logo = () => {
     return (
         <div className='logo'>

@@ -1,17 +1,17 @@
-import React from 'react';
-import '../banner/_Banner.scss';
+// import React from 'react';
+// import '../banner/_Banner.scss';
 
 
-const Banner = () => {
+// const Banner = () => {
 
-    return (
-        <div className='banner'>
-            {/* <img src={logo} alt='SeptArche' className='banner' /> */}
-            <h1>SeptArche Librairie</h1>
+//     return (
+//         <div className='banner'>
+//             {/* <img src={logo} alt='SeptArche' className='banner' /> */}
+//             <h1>SeptArche Librairie</h1>
                     
 
-      </div>
-    );
-};
+//       </div>
+//     );
+// };
 
-export default Banner;
+// export default Banner;
