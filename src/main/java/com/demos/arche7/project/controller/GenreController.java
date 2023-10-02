@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/genres")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class GenreController {
     @Autowired
     private final GenreRepository genreRepository;

@@ -1,7 +1,7 @@
 package com.demos.arche7.project.controller;
 
 import com.demos.arche7.project.model.Article;
-import com.demos.arche7.project.service.Article.ArticleService;
+import com.demos.arche7.project.service.article.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,7 +15,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin
-
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
@@ -52,10 +51,10 @@ public class ArticleController {
      * @param id supprime l'article via son id
      * @return l'article supprimé
      */
-    @DeleteMapping("/{id}")
+ /*   @DeleteMapping("/{id}")
     public Article delete (@PathVariable Long id) {
         return delete(id);
-    }
+    }*/
 
     /**
      *
@@ -69,12 +68,12 @@ public class ArticleController {
     }
 
     /**
-     * @param designation recherche les articles avec une désignation ou un mot clé
+     * @param keyword recherche les articles avec une désignation ou un mot clé
      * @return l'article souhaité
      */
-    @GetMapping(params = {"designation"})
-    public List<Article> findByDesignation(@RequestParam String designation){
-        return articleService.findByDesignation(designation);
+    @GetMapping("/search/designation")
+    public List<Article> findByDesignation(@RequestParam String keyword){
+        return articleService.findByDesignation(keyword);
     }
     /**construction de la méthode Update avec le verb Put pour mettre à jour les articles avec la method responseEntity*/
 

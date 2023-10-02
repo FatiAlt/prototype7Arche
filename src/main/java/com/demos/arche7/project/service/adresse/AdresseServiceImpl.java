@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Adresse;
+package com.demos.arche7.project.service.adresse;
 
 import com.demos.arche7.project.model.Adresse;
 import com.demos.arche7.project.repository.AdresseRepository;

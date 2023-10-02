@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Article;
+package com.demos.arche7.project.service.article;
 
 import com.demos.arche7.project.model.Article;
 
@@ -15,7 +15,7 @@ public interface ArticleService {
 
     Article rechercheRef(String ref);
 
-    List<Article> findByDesignation(String designation);
+    List<Article> findByDesignation(String keyword);
 
     Optional<Article> findById(Long id);
 
@@ -24,6 +24,6 @@ public interface ArticleService {
      * @param id supprime l'article via son id
      * @return l'article supprimé
      */
-    void delete(Long id);
+//    void delete(Long id);
 }
 

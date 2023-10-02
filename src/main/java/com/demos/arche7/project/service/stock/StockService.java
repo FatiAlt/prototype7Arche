@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Stock;
+package com.demos.arche7.project.service.stock;
 
 public interface StockService {
 

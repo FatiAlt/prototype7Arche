@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Panier;
+package com.demos.arche7.project.service.panier;
 
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Panier;

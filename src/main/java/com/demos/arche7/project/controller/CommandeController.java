@@ -4,7 +4,7 @@ import com.demos.arche7.project.exception.ResourceNotFoundException;
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Commande;
 import com.demos.arche7.project.repository.CommandeRepository;
-import com.demos.arche7.project.service.Commande.CommandeService;
+import com.demos.arche7.project.service.commande.CommandeService;
 import com.demos.arche7.project.exception.StockException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/commandes")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class CommandeController {
     @Autowired
     private CommandeService commandeService;

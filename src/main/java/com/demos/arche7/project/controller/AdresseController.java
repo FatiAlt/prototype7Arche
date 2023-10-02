@@ -1,7 +1,7 @@
 package com.demos.arche7.project.controller;
 
 import com.demos.arche7.project.model.Adresse;
-import com.demos.arche7.project.service.Adresse.AdresseService;
+import com.demos.arche7.project.service.adresse.AdresseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package stock;
 
-import com.demos.arche7.project.service.Stock.StockService;
+import com.demos.arche7.project.service.stock.StockService;
 import org.junit.Before;
 import org.mockito.Mock;
 import org.mockito.Mockito;

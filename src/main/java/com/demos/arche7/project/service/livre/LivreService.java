@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Livre;
+package com.demos.arche7.project.service.livre;
 
 import com.demos.arche7.project.model.Livre;
 

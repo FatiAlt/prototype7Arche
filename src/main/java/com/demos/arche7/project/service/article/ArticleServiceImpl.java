@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Article;
+package com.demos.arche7.project.service.article;
 
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.repository.ArticleRepository;
@@ -29,20 +29,25 @@ public class ArticleServiceImpl implements ArticleService {
     public Article rechercheRef(String ref) {
         return articleRepository.findByRef(ref);
     }
+
     @Override
+    public List<Article> findByDesignation(String keyword) {
+        return articleRepository.findArticlesByDesignation((keyword));
+    }
+/*    @Override
     public List<Article> findByDesignation(String designation) {
         return articleRepository.findArticlesByDesignationContains(designation);
-    }
+    }*/
 
     @Override
     public Optional<Article> findById(Long id) {
         return articleRepository.findById(id);
     }
 
-    @Override
+  /*  @Override
     public void delete(Long id) {
 
-    }
+    }*/
 
 
 }

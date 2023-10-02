@@ -4,7 +4,6 @@ import com.demos.arche7.project.exception.StockException;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-
 public class Stock {
     private int qteTotal;
 

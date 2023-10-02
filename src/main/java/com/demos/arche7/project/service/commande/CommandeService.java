@@ -1,4 +1,4 @@
-package com.demos.arche7.project.service.Commande;
+package com.demos.arche7.project.service.commande;
 
 import com.demos.arche7.project.model.Article;
 import com.demos.arche7.project.model.Commande;

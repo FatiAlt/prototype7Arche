@@ -21,7 +21,7 @@ public class Article {
     @Column(name = "designation")
     private String designation;
     @Column(name = "prix_ht")
-    private double prixHt;
+    private float prixHt;
     @Column(name = "tva")
     private double tva = 0.2;
     @Column(name = "resume")
@@ -43,7 +43,7 @@ public class Article {
     * @param prixHt et tva, ils se calculent automatiquement
     * @see #getPrixHt()
     */
-    public Article(Long id, String ref, String designation, double prixHt, double tva, String resume, boolean articleNumerique, Stock stock, String image) {
+    public Article(Long id, String ref, String designation, float prixHt, double tva, String resume, boolean articleNumerique, Stock stock, String image) {
         this.id = id;
         this.ref = ref;
         this.designation = designation;
@@ -84,7 +84,7 @@ public class Article {
         return prixHt;
     }
 
-    public void setPrixHt(double prixHt) {
+    public void setPrixHt(float prixHt) {
         this.prixHt = prixHt;
     }
 

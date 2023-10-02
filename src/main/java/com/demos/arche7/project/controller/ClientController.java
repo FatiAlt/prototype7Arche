@@ -1,18 +1,14 @@
 package com.demos.arche7.project.controller;
 
-import com.demos.arche7.project.exception.ResourceNotFoundException;
 import com.demos.arche7.project.model.Client;
 import com.demos.arche7.project.repository.ClientRepository;
-import com.demos.arche7.project.service.Client.ClientService;
+import com.demos.arche7.project.service.client.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/clients")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class ClientController {
     @Autowired
     ClientService clientService;

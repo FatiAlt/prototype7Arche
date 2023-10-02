@@ -1,7 +1,7 @@
 package com.demos.arche7.project.controller;
 
 import com.demos.arche7.project.model.Livre;
-import com.demos.arche7.project.service.Livre.LivreService;
+import com.demos.arche7.project.service.livre.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -22,7 +22,7 @@ public class LivreController {
     /** méthode Get pour recupérer les livres*/
     @GetMapping
     public Iterable<Livre> readAll() {return livreService.getAllLivres(); }
-    @GetMapping(params = "/{titre}")
+    @GetMapping("/search/titre")
     public List<Livre> findByTitle(@RequestParam String titre){
         return livreService.findByTitre(titre);
     }

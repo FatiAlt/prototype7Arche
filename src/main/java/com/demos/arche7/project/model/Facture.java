@@ -12,7 +12,7 @@ public class Facture {
     @Column(name = "id")
     private Long id;
     @Column(name = "date")
-    private Date date;
+    private Date dateFacture;
     @Column(name = "prix_ht")
     private float prixHt;
     @Column(name = "tva")
@@ -26,7 +26,7 @@ public class Facture {
 
     public Facture(Long id, Date date, float prixHt, double tva, float prixTtc, Commande commande) {
         this.id = id;
-        this.date = date;
+        this.dateFacture = date;
         this.prixHt = prixHt;
         this.tva = tva;
         this.prixTtc = prixTtc;
@@ -41,12 +41,12 @@ public class Facture {
         return id;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDateFacture() {
+        return dateFacture;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateFacture(Date date) {
+        this.dateFacture = date;
     }
 
     public float getPrixHt() {
@@ -77,7 +77,7 @@ public class Facture {
     public String toString() {
         return "Facture{" +
                 "id=" + id +
-                ", date=" + date +
+                ", date=" + dateFacture +
                 ", prixHt=" + prixHt +
                 ", tva=" + tva +
                 ", prixTtc=" + prixTtc +

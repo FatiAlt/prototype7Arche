@@ -3,7 +3,7 @@
 C'est une application de librairie de vente de livres dans le domaine du cinéma. 
 Dans le cadre d'un lancement d'une application web pour s'agrandir, le client septarche librairie a remis un cahier des charges
 en détaillant ses besoins et ses attentes.
-https://github.com/Fatiocto/SeptArche.git (Toute la documentation est présente).
+https://github.com/Fatiocto/SeptArche.git (Toute la documentation générale est présente).
 Stack technique :
 - SpringBoot
 - MySql : * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
@@ -21,7 +21,7 @@ git clone git@github.com:Fatiocto/projet-arche-7.git
 
 ## Installation
 1. Ajouter les dépendances suivantes :
--Le projet est sur JAR: le serveur tomcat est lancé par spring
+-Le projet est sur JAR: le serveur tomcat est lancé par spring (port: 9080)
 - MAVEN :   * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.5/maven-plugin/reference/html/)
             * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 - Spring Web : * [Spring Web](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#web)

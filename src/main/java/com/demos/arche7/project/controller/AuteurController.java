@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auteurs")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class AuteurController {
     @Autowired
     private final AuteurRepository auteurRepository;
